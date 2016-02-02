@@ -22,10 +22,21 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="Parking-Management" />
+        <module name="app-core" />
+        <module name="app-dao-api" />
+      </profile>
+      <profile default="false" name="Annotation profile for app-dao" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="app-dao" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="app-core" target="1.5" />
+      <module name="app-dao" target="1.6" />
+      <module name="app-dao-api" target="1.5" />
       <module name="Parking-Management" target="1.5" />
     </bytecodeTargetLevel>
   </component>
