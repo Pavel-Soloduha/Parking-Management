@@ -24,6 +24,9 @@
         <processorPath useClasspath="true" />
         <module name="app-core" />
         <module name="app-dao-api" />
+        <module name="app-rest" />
+        <module name="app-service" />
+        <module name="app-service-api" />
       </profile>
       <profile default="false" name="Annotation profile for app-dao" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -37,6 +40,9 @@
       <module name="app-core" target="1.5" />
       <module name="app-dao" target="1.6" />
       <module name="app-dao-api" target="1.5" />
+      <module name="app-rest" target="1.5" />
+      <module name="app-service" target="1.5" />
+      <module name="app-service-api" target="1.5" />
       <module name="Parking-Management" target="1.5" />
     </bytecodeTargetLevel>
   </component>

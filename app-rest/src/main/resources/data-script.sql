@@ -1,0 +1,1 @@
+INSERT INTO PARKING(2, 44, "first");
