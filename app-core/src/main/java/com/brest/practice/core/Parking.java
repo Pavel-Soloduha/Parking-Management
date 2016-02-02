@@ -1,4 +1,4 @@
-package com.brest.practice;
+package com.brest.practice.core;
 
 /**
  * Created by Shadowofclown on 02.02.2016.

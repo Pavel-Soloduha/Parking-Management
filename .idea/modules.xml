@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Parking-Management.iml" filepath="$PROJECT_DIR$/Parking-Management.iml" />
       <module fileurl="file://$PROJECT_DIR$/app-core/app-core.iml" filepath="$PROJECT_DIR$/app-core/app-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app-dao-api/app-dao-api.iml" filepath="$PROJECT_DIR$/app-dao-api/app-dao-api.iml" />
     </modules>
   </component>
 </project>
