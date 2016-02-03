@@ -1,1 +1,1 @@
-INSERT INTO PARKING(2, 44, "first");
+INSERT INTO PARKING(parkingid, amountplace, address) VALUES(1, 44, 'first');
