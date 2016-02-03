@@ -1,8 +1,12 @@
 package com.brest.practice.rest;
 
+import com.brest.practice.core.Parking;
+import com.brest.practice.service.ParkingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * Created by Shadowofclown on 02.02.2016.
@@ -29,7 +33,7 @@ public class ParkingRestController {
     @RequestMapping(value = "parking/{id}", method = RequestMethod.GET)
     @ResponseStatus(value = HttpStatus.OK)
     public Parking getParkingById(@PathVariable(value = "id") Integer parkingId) {
-        return parkingService.getParkingById();
+        return parkingService.getParkingById(parkingId);
     }
 
     @RequestMapping(value = "/parking/{id}/{address}", method = RequestMethod.PUT)

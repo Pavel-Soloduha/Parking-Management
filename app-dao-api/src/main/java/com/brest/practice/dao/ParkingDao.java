@@ -13,7 +13,7 @@ public interface ParkingDao {
 
     Parking getParkingById(Integer parkingId);
 
-    void updateParking(String address);
+    void updateParking(Integer parkingId, String address);
 
     void deleteParking(Integer parkingId);
 }

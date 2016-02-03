@@ -37,7 +37,7 @@ public class ParkingDaoImpl implements ParkingDao {
     }
 
     @Override
-    public void updateParking(String address) {
+    public void updateParking(Integer parkingId, String address) {
 
     }
 
