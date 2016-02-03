@@ -1,6 +1,9 @@
 package com.brest.practice.dao;
 
 import com.brest.practice.core.Parking;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
@@ -13,17 +16,12 @@ import java.util.List;
 
 public class ParkingDaoImpl implements ParkingDao {
 
-    private JdbcTemplate jdbcTemplate;
-    private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
+    @Autowired
+    private SessionFactory sessionFactory;
 
-    public ParkingDaoImpl(DataSource dataSource) {
-        jdbcTemplate = new JdbcTemplate(dataSource);
-        namedParameterJdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
-    }
-
-    @Override
+       @Override
     public void addParking(Parking parking) {
-
+           sessionFactory.getCurrentSession().save(parking);
     }
 
     @Override
@@ -33,16 +31,20 @@ public class ParkingDaoImpl implements ParkingDao {
 
     @Override
     public Parking getParkingById(Integer parkingId) {
-        return null;
+        return (Parking) sessionFactory.getCurrentSession().get(Parking.class, parkingId);
     }
 
     @Override
     public void updateParking(Integer parkingId, String address) {
-
+        sessionFactory.getCurrentSession().update(Parking.class);
     }
 
     @Override
     public void deleteParking(Integer parkingId) {
+        Parking parking = (Parking) sessionFactory.getCurrentSession().get(Parking.class, parkingId);
 
+        if (parking != null){
+            sessionFactory.getCurrentSession().delete(parking);
+        }
     }
 }

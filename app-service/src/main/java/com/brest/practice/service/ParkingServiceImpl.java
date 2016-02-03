@@ -2,6 +2,7 @@ package com.brest.practice.service;
 
 import com.brest.practice.core.Parking;
 import com.brest.practice.dao.ParkingDao;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -12,11 +13,12 @@ import java.util.List;
 @Transactional
 public class ParkingServiceImpl implements ParkingService {
 
+    @Autowired
     private ParkingDao parkingDao;
 
-    public void setParkingDao(ParkingDao parkingDao) {
-        this.parkingDao = parkingDao;
-    }
+//    public void setParkingDao(ParkingDao parkingDao) {
+//        this.parkingDao = parkingDao;
+//    }
 
     @Override
     public List<Parking> getAllParkings() {

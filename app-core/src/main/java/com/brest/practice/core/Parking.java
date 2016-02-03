@@ -1,12 +1,22 @@
 package com.brest.practice.core;
 
+import javax.persistence.*;
+
 /**
  * Created by Shadowofclown on 02.02.2016.
  */
+
+@Entity
+@Table(name = "parking")
 public class Parking {
 
+    @Id
+    @Column(name = "parkingId")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer parkingId;
+    @Column(name = "amountPlace")
     private Integer amountPlace;
+    @Column(name = "address")
     private String address;
 
     public Parking() {
