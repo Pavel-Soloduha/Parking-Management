@@ -76,7 +76,7 @@
         <entry file="file://$PROJECT_DIR$/app-rest/src/main/java/com/brest/practice/rest/ParkingRestController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.44493392">
-              <caret line="36" column="15" selection-start-line="36" selection-start-column="15" selection-end-line="36" selection-end-column="15" />
+              <caret line="36" column="27" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -707,7 +707,13 @@
       <option name="project" value="LOCAL" />
       <updated>1454486131171</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add code">
+      <created>1454486521628</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1454486521628</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -978,7 +984,7 @@
     <entry file="file://$PROJECT_DIR$/app-rest/src/main/java/com/brest/practice/rest/ParkingRestController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.44493392">
-          <caret line="36" column="15" selection-start-line="36" selection-start-column="15" selection-end-line="36" selection-end-column="15" />
+          <caret line="36" column="27" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
