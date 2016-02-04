@@ -19,7 +19,7 @@ public class ParkingDaoImpl implements ParkingDao {
     @Autowired
     private SessionFactory sessionFactory;
 
-       @Override
+    @Override
     public void addParking(Parking parking) {
            sessionFactory.getCurrentSession().save(parking);
     }

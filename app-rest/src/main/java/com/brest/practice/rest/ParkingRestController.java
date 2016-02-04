@@ -2,6 +2,7 @@ package com.brest.practice.rest;
 
 import com.brest.practice.core.Parking;
 import com.brest.practice.service.ParkingService;
+import com.brest.practice.service.ParkingServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -15,8 +16,8 @@ import java.util.List;
 @RestController
 public class ParkingRestController {
 
-    @Autowired
-    private ParkingService parkingService;
+//    @Autowired
+    private ParkingService parkingService = new ParkingServiceImpl();
 
     @RequestMapping(value = "parking", method = RequestMethod.POST)
     @ResponseStatus(value = HttpStatus.OK)

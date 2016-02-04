@@ -1,1 +1,0 @@
-INSERT INTO PARKING(parkingid, amountplace, address) VALUES(1, 44, 'first');
