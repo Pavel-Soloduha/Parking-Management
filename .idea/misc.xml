@@ -49,7 +49,13 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/app-core/pom.xml" />
+        <option value="$PROJECT_DIR$/app-dao-api/pom.xml" />
+        <option value="$PROJECT_DIR$/app-dao/pom.xml" />
         <option value="$PROJECT_DIR$/app-hibernate/pom.xml" />
+        <option value="$PROJECT_DIR$/app-rest/pom.xml" />
+        <option value="$PROJECT_DIR$/app-service-api/pom.xml" />
+        <option value="$PROJECT_DIR$/app-service/pom.xml" />
       </set>
     </option>
   </component>
