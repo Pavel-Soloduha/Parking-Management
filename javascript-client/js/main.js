@@ -28,6 +28,7 @@ function findAll() {
 }
 
 function renderList(data) {
+    console.log("renderList");
     var dto = data.parkings == null ? [] : (data.parkings instanceof Array ? data.parkings : [data.parkings]);
     $('#parkingList tr').remove();
     $.each(dto, function (index, parking) {
@@ -36,6 +37,7 @@ function renderList(data) {
 }
 
 function drawRow(parking) {
+    console.log("drawRow");
     var row = $("<tr />")
     $("#parkingList").append(row);
 //    row.append($("<td>" + '<a href="#" data-identity="' + parking.parkingId + '">' + parking.amountPlace
