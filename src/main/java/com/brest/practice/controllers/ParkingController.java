@@ -15,11 +15,7 @@ public class ParkingController {
     @Autowired
     private ParkingService parkingService;
 
-    @RequestMapping(value = "/version", method = RequestMethod.GET)
-    public String getVersion() {
-        System.out.println("i do it");
-        return "1.0";
-    }
+    private static String VERSION = "1.0";
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public @ResponseBody List<Parking> getAllParkings() {
@@ -30,15 +26,20 @@ public class ParkingController {
         return parkings;
     }
 
+    @RequestMapping(value = "/parkingdto", method = RequestMethod.GET)
+    public @ResponseBody ParkingDto getUserDto() {
+        return parkingService.getParkingDto();
+    }
+
+    @RequestMapping(value = "/version", method = RequestMethod.GET)
+    public String getVersion() {
+        return VERSION;
+    }
+
     @RequestMapping(value = "/test", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public void test() {
         System.out.println("call rest");
         parkingService.test();
-    }
-
-    @RequestMapping(value = "/parkingdto", method = RequestMethod.GET)
-    public @ResponseBody ParkingDto getUserDto() {
-        return parkingService.getParkingDto();
     }
 }
