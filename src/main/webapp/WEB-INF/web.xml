@@ -4,15 +4,15 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
 	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 
-    <display-name>Spring MVC basic app template</display-name>
+    <!--<display-name>Spring MVC basic app template</display-name>-->
 
-    <listener>
-        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-    </listener>
+    <!--<listener>-->
+        <!--<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>-->
+    <!--</listener>-->
 
-    <listener>
-        <listener-class>org.springframework.security.web.session.HttpSessionEventPublisher</listener-class>
-    </listener>
+    <!--<listener>-->
+        <!--<listener-class>org.springframework.security.web.session.HttpSessionEventPublisher</listener-class>-->
+    <!--</listener>-->
 
     <servlet>
         <servlet-name>mvc-dispatcher</servlet-name>
