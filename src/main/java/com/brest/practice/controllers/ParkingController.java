@@ -31,6 +31,28 @@ public class ParkingController {
         return parkingService.getParkingDto();
     }
 
+    @RequestMapping(value = "parking", method = RequestMethod.POST)
+    @ResponseStatus(HttpStatus.CREATED)
+    public void addParking(@RequestBody Parking parking) {
+        parkingService.addParking(parking);
+    }
+
+    @RequestMapping(value = "/parking/{id}", method = RequestMethod.GET)
+    public @ResponseBody Parking getParkingById(@PathVariable(value = "id") Integer parkingId) {
+        return parkingService.getParkingById(parkingId);
+    }
+
+    @RequestMapping(value = "/parking/{id}", method = RequestMethod.PUT)
+    public void updateParking(@PathVariable(value = "id") Integer parkingId,
+                              @RequestBody Parking parking) {
+        parkingService.updateParking(parkingId, parking);
+    }
+
+    @RequestMapping(value = "/parking/{id}", method = RequestMethod.DELETE)
+    public void deleteParking(@PathVariable(value = "id") Integer parkingId) {
+        parkingService.deleteParking(parkingId);
+    }
+
     @RequestMapping(value = "/version", method = RequestMethod.GET)
     public String getVersion() {
         return VERSION;
