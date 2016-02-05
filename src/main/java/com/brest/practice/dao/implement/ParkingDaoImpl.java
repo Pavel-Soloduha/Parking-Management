@@ -18,7 +18,7 @@ public class ParkingDaoImpl implements ParkingDao {
 
     public Integer addParking(Parking parking) {
         sessionFactory.getCurrentSession().save(parking);
-        return parking.getId();
+        return parking.getParkingId();
     }
 
     public void updateParking(Integer parkingId, Parking parking) {

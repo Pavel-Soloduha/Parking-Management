@@ -1,6 +1,6 @@
 // The root URL for the RESTful services
 //var USER_URL = "http://localhost:8080/rest/user";
-var PARKINGS_URL = "http://localhost:8080/parkingManagement";
+var PARKINGS_URL = "http://localhost:8080/parkingManagement/parkingdto";
 
 findAll();
 
@@ -28,10 +28,7 @@ function findAll() {
 }
 
 function renderList(data) {
-    console.log('renderList');
     var dto = data.parkings == null ? [] : (data.parkings instanceof Array ? data.parkings : [data.parkings]);
-    var dto = data;
-    console.log(data instanceof Array);
     $('#parkingList tr').remove();
     $.each(dto, function (index, parking) {
         drawRow(parking);
@@ -39,11 +36,12 @@ function renderList(data) {
 }
 
 function drawRow(parking) {
-    console.log('drawRow');
     var row = $("<tr />")
     $("#parkingList").append(row);
-    row.append($("<td>" + '<a href="#" data-identity="' + parking.parkingId + '">' + parking.amountPlace
-     + '</a></td>'));
+//    row.append($("<td>" + '<a href="#" data-identity="' + parking.parkingId + '">' + parking.amountPlace
+//     + '</a> </td>'));
+    row.append($("<td>" + parking.parkingId + "</td>"));
+    row.append($("<td>" + parking.amountPlace + "</td>"));
     row.append($("<td>" + parking.address + "</td>"));
 }
 //

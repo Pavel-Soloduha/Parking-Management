@@ -10,7 +10,7 @@ public class Parking {
     @Id
     @Column(name = "parkingId")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Integer parkingId;
 
     @Column(name = "amountPlace")
     private Integer amountPlace;
@@ -22,18 +22,18 @@ public class Parking {
 
     }
 
-    public Parking(Integer id, Integer amountPlace, String address) {
-        this.id = id;
+    public Parking(Integer parkingId, Integer amountPlace, String address) {
+        this.parkingId = parkingId;
         this.amountPlace = amountPlace;
         this.address = address;
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getParkingId() {
+        return parkingId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setParkingId(Integer parkingId) {
+        this.parkingId = parkingId;
     }
 
     public Integer getAmountPlace() {
@@ -55,7 +55,7 @@ public class Parking {
     @Override
     public String toString() {
         return "Parking{" +
-                "id=" + id +
+                "parkingId=" + parkingId +
                 ", amountPlace=" + amountPlace +
                 ", address='" + address + '\'' +
                 '}';

@@ -3,11 +3,13 @@ package com.brest.practice.service.implement;
 
 import com.brest.practice.dao.interfaces.ParkingDao;
 import com.brest.practice.models.Parking;
+import com.brest.practice.models.ParkingDto;
 import com.brest.practice.service.interfaces.ParkingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -40,5 +42,16 @@ public class ParkingServiceImpl implements ParkingService {
     public void test() {
         System.out.println("call service");
         parkingDao.test();
+    }
+
+    public ParkingDto getParkingDto() {
+        ParkingDto parkingDto = new ParkingDto();
+        parkingDto.setTotal(parkingDao.getAllParkings().size());
+        if (parkingDto.getTotal() > 0) {
+            parkingDto.setParkings(parkingDao.getAllParkings());
+        } else {
+            parkingDto.setParkings(Collections.<Parking>emptyList());
+        }
+        return parkingDto;
     }
 }

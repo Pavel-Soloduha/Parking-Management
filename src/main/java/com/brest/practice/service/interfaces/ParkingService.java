@@ -2,6 +2,7 @@ package com.brest.practice.service.interfaces;
 
 
 import com.brest.practice.models.Parking;
+import com.brest.practice.models.ParkingDto;
 
 import java.util.List;
 
@@ -18,4 +19,6 @@ public interface ParkingService {
     void deleteParking(Integer parkingId);
 
     void test();
+
+    ParkingDto getParkingDto();
 }
