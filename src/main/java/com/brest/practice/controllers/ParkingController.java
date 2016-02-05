@@ -1,9 +1,12 @@
 package com.brest.practice.controllers;
 
+import com.brest.practice.models.Parking;
 import com.brest.practice.service.interfaces.ParkingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class ParkingController {
@@ -18,6 +21,14 @@ public class ParkingController {
     }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
+    public void getAllParkings() {
+        List<Parking> parkings = parkingService.getAllParkings();
+        for(Parking item : parkings) {
+            System.out.println(item);
+        }
+    }
+
+    @RequestMapping(value = "/test", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public void test() {
         System.out.println("call rest");

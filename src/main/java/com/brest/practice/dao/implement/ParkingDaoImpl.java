@@ -29,7 +29,7 @@ public class ParkingDaoImpl implements ParkingDao {
         return (Parking) sessionFactory.getCurrentSession().get(Parking.class, parkingId);
     }
 
-    public List<Parking> getParkings() {
+    public List<Parking> getAllParkings() {
         try{
             Criteria criteria = sessionFactory.
                     getCurrentSession().

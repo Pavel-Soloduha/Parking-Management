@@ -52,4 +52,12 @@ public class Parking {
         this.address = address;
     }
 
+    @Override
+    public String toString() {
+        return "Parking{" +
+                "id=" + id +
+                ", amountPlace=" + amountPlace +
+                ", address='" + address + '\'' +
+                '}';
+    }
 }

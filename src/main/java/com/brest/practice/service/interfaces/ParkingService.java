@@ -13,7 +13,7 @@ public interface ParkingService {
 
     Parking getParkingById(Integer parkingId);
 
-    List<Parking> getParkings();
+    List<Parking> getAllParkings();
 
     void deleteParking(Integer parkingId);
 

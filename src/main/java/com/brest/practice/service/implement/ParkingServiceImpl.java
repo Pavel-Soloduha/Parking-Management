@@ -29,8 +29,8 @@ public class ParkingServiceImpl implements ParkingService {
         return parkingDao.getParkingById(parkingId);
     }
 
-    public List<Parking> getParkings() {
-        return parkingDao.getParkings();
+    public List<Parking> getAllParkings() {
+        return parkingDao.getAllParkings();
     }
 
     public void deleteParking(Integer parkingId) {
