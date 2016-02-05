@@ -32,7 +32,7 @@
         <property name="dataSource" ref="dataSource" />
         <property name="annotatedClasses">
             <beans:list>
-                <value>com.about.java.models.Tree</value>
+                <value>com.about.java.models.Parking</value>
             </beans:list>
         </property>
         <property name="hibernateProperties">

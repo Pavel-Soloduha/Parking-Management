@@ -12,8 +12,9 @@
     <tr>
         <th>Id</th>
         <th>Деревья</th>
+        <th></th>
     </tr>
-    <c:forEach items="${trees}" var="tree">
+    <c:forEach items="${parkings}" var="parking">
         <tr>
             <td>${tree.id}</td>
             <td><input type="text" id="idTreeType" value="${tree.type}" name="type"></td>

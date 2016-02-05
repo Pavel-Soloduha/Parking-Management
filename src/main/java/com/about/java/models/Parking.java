@@ -1,21 +1,20 @@
-package com.brest.practice.core;
+package com.about.java.models;
 
 import javax.persistence.*;
-
-/**
- * Created by Shadowofclown on 02.02.2016.
- */
 
 @Entity
 @Table(name = "parking")
 public class Parking {
 
+
     @Id
     @Column(name = "parkingId")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer parkingId;
+    private Integer id;
+
     @Column(name = "amountPlace")
     private Integer amountPlace;
+
     @Column(name = "address")
     private String address;
 
@@ -23,18 +22,18 @@ public class Parking {
 
     }
 
-    public Parking(Integer parkingId, Integer amountPlace, String address) {
-        this.parkingId = parkingId;
+    public Parking(Integer id, Integer amountPlace, String address) {
+        this.id = id;
         this.amountPlace = amountPlace;
         this.address = address;
     }
 
-    public Integer getParkingId() {
-        return parkingId;
+    public Integer getId() {
+        return id;
     }
 
-    public void setParkingId(Integer parkingId) {
-        this.parkingId = parkingId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public Integer getAmountPlace() {
@@ -52,4 +51,5 @@ public class Parking {
     public void setAddress(String address) {
         this.address = address;
     }
+
 }
