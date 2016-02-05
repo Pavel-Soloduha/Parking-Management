@@ -23,6 +23,7 @@ public class ParkingDaoImpl implements ParkingDao {
 
     public void updateParking(Integer parkingId, Parking parking) {
         //todo
+        sessionFactory.getCurrentSession().update(Parking.class);
     }
 
     public Parking getParkingById(Integer parkingId) {
