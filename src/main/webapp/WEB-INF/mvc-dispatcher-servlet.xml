@@ -33,6 +33,7 @@
         <property name="annotatedClasses">
             <beans:list>
                 <value>com.brest.practice.models.Parking</value>
+                <value>com.brest.practice.models.Tariff</value>
             </beans:list>
         </property>
         <property name="hibernateProperties">
