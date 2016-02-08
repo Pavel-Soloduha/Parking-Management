@@ -18,12 +18,6 @@ public class Place {
     @Column(name = "floor")
     private Integer floor;
 
-    @Column(name = "isCovered")
-    private boolean isCovered;
-
-    @Column(name = "isLighted")
-    private boolean isLighted;
-
     //todo add connection
     @Column(name = "parkingId")
     private Integer parkingId;
@@ -31,11 +25,9 @@ public class Place {
     public Place() {
     }
 
-    public Place(Integer placeId, Integer floor, boolean isCovered, boolean isLighted, Integer parkingId) {
+    public Place(Integer placeId, Integer floor, Integer parkingId) {
         this.placeId = placeId;
         this.floor = floor;
-        this.isCovered = isCovered;
-        this.isLighted = isLighted;
         this.parkingId = parkingId;
     }
 
@@ -53,20 +45,6 @@ public class Place {
         this.floor = floor;
     }
 
-    public boolean isCovered() {
-        return isCovered;
-    }
-    public void setCovered(boolean covered) {
-        isCovered = covered;
-    }
-
-    public boolean isLighted() {
-        return isLighted;
-    }
-    public void setLighted(boolean lighted) {
-        isLighted = lighted;
-    }
-
     public Integer getParkingId() {
         return parkingId;
     }
@@ -79,8 +57,6 @@ public class Place {
         return "Place{" +
                 "placeId=" + placeId +
                 ", floor=" + floor +
-                ", isCovered=" + isCovered +
-                ", isLighted=" + isLighted +
                 ", parkingId=" + parkingId +
                 '}';
     }
