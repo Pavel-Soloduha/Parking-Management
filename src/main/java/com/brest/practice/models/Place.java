@@ -1,20 +1,31 @@
 package com.brest.practice.models;
 
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 /**
  * Created by emergency on 2/8/16.
  */
+
+@Entity
+@Table(name = "Place")
 public class Place {
 
+    @Id
+    @Column(name = "placeId")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer placeId;
 
+    @Column(name = "floor")
     private Integer floor;
 
+    @Column(name = "isCovered")
     private boolean isCovered;
 
+    @Column(name = "isLighted")
     private boolean isLighted;
 
+    //todo add connection
+    @Column(name = "parkingId")
     private Integer parkingId;
 
     public Place() {
@@ -61,5 +72,16 @@ public class Place {
     }
     public void setParkingId(Integer parkingId) {
         this.parkingId = parkingId;
+    }
+
+    @Override
+    public String toString() {
+        return "Place{" +
+                "placeId=" + placeId +
+                ", floor=" + floor +
+                ", isCovered=" + isCovered +
+                ", isLighted=" + isLighted +
+                ", parkingId=" + parkingId +
+                '}';
     }
 }

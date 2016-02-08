@@ -28,6 +28,7 @@ public class Parking {
         inverseJoinColumns = { @JoinColumn(name  = "tariffId") })
     Set<Tariff> tariffs = new HashSet<Tariff>();
 
+    //todo check me
     @OneToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "Parking_Place",
         joinColumns = { @JoinColumn(name = "parkingId") },

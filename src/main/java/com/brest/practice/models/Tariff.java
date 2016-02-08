@@ -56,6 +56,16 @@ public class Tariff {
         this.description = description;
     }
 
+    @Override
+    public String toString() {
+        return "Tariff{" +
+                "tariffId=" + tariffId +
+                ", costPerHour=" + costPerHour +
+                ", description='" + description + '\'' +
+                ", parkings=" + parkings +
+                '}';
+    }
+
     public void copy(Tariff tariff) {
         this.costPerHour = tariff.costPerHour;
         this.description = tariff.description;
