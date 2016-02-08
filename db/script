@@ -1,0 +1,59 @@
+delimiter $$
+
+CREATE TABLE `Tariff` (
+  `tariffId` int(11) NOT NULL,
+  `costPerHour` double DEFAULT NULL,
+  `description` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`tariffId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1$$
+
+delimiter $$
+
+CREATE TABLE `Place` (
+  `placeId` int(11) NOT NULL,
+  `floor` int(11) DEFAULT NULL,
+  `parkingId` int(11) NOT NULL,
+  `Meeting_idMeeting` int(11) DEFAULT '1',
+  PRIMARY KEY (`placeId`),
+  KEY `FK_f0p8qfixq7bkmcxtmactwsjgo` (`parkingId`),
+  CONSTRAINT `FK_f0p8qfixq7bkmcxtmactwsjgo` FOREIGN KEY (`parkingId`) REFERENCES `Parking` (`parkingId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1$$
+
+delimiter $$
+
+CREATE TABLE `Parking_Tariff` (
+  `parkingId` int(11) NOT NULL,
+  `tariffId` int(11) DEFAULT NULL,
+  KEY `FK_bt6nse3f4eo3n0v36ncf3e42a` (`tariffId`),
+  KEY `FK_k8y07a01s7gnusl5g7owf51an` (`parkingId`),
+  CONSTRAINT `FK_k8y07a01s7gnusl5g7owf51an` FOREIGN KEY (`parkingId`) REFERENCES `Parking` (`parkingId`),
+  CONSTRAINT `FK_bt6nse3f4eo3n0v36ncf3e42a` FOREIGN KEY (`tariffId`) REFERENCES `Tariff` (`tariffId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1$$
+
+delimiter $$
+
+CREATE TABLE `Parking_Place` (
+  `parkingId` int(11) NOT NULL,
+  `placeId` int(11) DEFAULT NULL,
+  `Parking_parkingId` int(11) NOT NULL DEFAULT '1',
+  `places_placeId` int(11) NOT NULL,
+  UNIQUE KEY `UK_a3by730xppom9r57qdd4xomyb` (`places_placeId`),
+  UNIQUE KEY `UK_n50f19y72qun34syid0cfch80` (`placeId`),
+  KEY `FK_ivbfkbi2unco1n45kfbrn37xv` (`parkingId`),
+  KEY `FK_9onii0qgwvkigyn4lqxwpg5xv` (`Parking_parkingId`),
+  CONSTRAINT `FK_9onii0qgwvkigyn4lqxwpg5xv` FOREIGN KEY (`Parking_parkingId`) REFERENCES `Parking` (`parkingId`),
+  CONSTRAINT `FK_a3by730xppom9r57qdd4xomyb` FOREIGN KEY (`places_placeId`) REFERENCES `Place` (`placeId`),
+  CONSTRAINT `FK_ivbfkbi2unco1n45kfbrn37xv` FOREIGN KEY (`parkingId`) REFERENCES `Parking` (`parkingId`),
+  CONSTRAINT `FK_n50f19y72qun34syid0cfch80` FOREIGN KEY (`placeId`) REFERENCES `Place` (`placeId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1$$
+
+delimiter $$
+
+CREATE TABLE `Parking` (
+  `parkingId` int(11) NOT NULL,
+  `amountPlace` int(11) DEFAULT NULL,
+  `address` varchar(45) DEFAULT NULL,
+  `amountFloor` int(11) DEFAULT NULL,
+  PRIMARY KEY (`parkingId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1$$
+
