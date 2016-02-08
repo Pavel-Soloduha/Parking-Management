@@ -19,12 +19,16 @@ public class Place {
     private Integer floor;
 
     //todo add connection
-    @Column(name = "parkingId")
+//    @ManyToOne
+//    @JoinColumn(name="parkingId")
+    @ManyToOne
+    @JoinColumn(name="department_id",
+            insertable=false, updatable=false,
+            nullable=false)
     private Integer parkingId;
 
     public Place() {
     }
-
     public Place(Integer placeId, Integer floor, Integer parkingId) {
         this.placeId = placeId;
         this.floor = floor;

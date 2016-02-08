@@ -28,7 +28,6 @@ public class Tariff {
 
     public Tariff() {
     }
-
     public Tariff(Integer tariffId, Double costPerHour, String description) {
         this.tariffId = tariffId;
         this.costPerHour = costPerHour;

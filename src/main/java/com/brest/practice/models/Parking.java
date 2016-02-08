@@ -1,7 +1,11 @@
 package com.brest.practice.models;
 
+import org.hibernate.annotations.IndexColumn;
+
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -29,24 +33,25 @@ public class Parking {
     Set<Tariff> tariffs = new HashSet<Tariff>();
 
     //todo check me
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "Parking_Place",
-        joinColumns = { @JoinColumn(name = "parkingId") },
-        inverseJoinColumns = { @JoinColumn(name = "placeId") })
-    Set<Place> places = new HashSet<Place>();
+//    @OneToMany(cascade = CascadeType.ALL)
+//    @JoinTable(name = "Parking_Place",
+//        joinColumns = { @JoinColumn(name = "parkingId") },
+//        inverseJoinColumns = { @JoinColumn(name = "placeId") })
+//    @OneToMany(mappedBy = "Parking")
+    @OneToMany(cascade={CascadeType.ALL})
+    @JoinColumn(name="parkingId")
+    List<Place> places = new ArrayList<Place>();
 
     public Parking() {
 
     }
-
     public Parking(Integer parkingId, Integer amountPlace, Integer amountFloor, String address) {
         this.parkingId = parkingId;
         this.amountPlace = amountPlace;
         this.amountFloor = amountFloor;
         this.address = address;
     }
-
-    public Parking(Integer parkingId, Integer amountPlace, Integer amountFloor, String address, Set<Tariff> tariffs, Set<Place> places) {
+    public Parking(Integer parkingId, Integer amountPlace, Integer amountFloor, String address, Set<Tariff> tariffs, List<Place> places) {
         this.parkingId = parkingId;
         this.amountPlace = amountPlace;
         this.amountFloor = amountFloor;
@@ -96,10 +101,10 @@ public class Parking {
         tariffs.remove(tariff);
     }
 
-    public Set<Place> getPlaces() {
+    public List<Place> getPlaces() {
         return places;
     }
-    public void setPlaces(Set<Place> places) {
+    public void setPlaces(List<Place> places) {
         this.places = places;
     }
     public void addPlace(Place place) {
