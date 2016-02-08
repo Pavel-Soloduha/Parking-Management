@@ -60,4 +60,9 @@ public class Parking {
                 ", address='" + address + '\'' +
                 '}';
     }
+
+    public void copy(Parking parking) {
+        this.amountPlace = parking.amountPlace;
+        this.address = parking.address;
+    }
 }

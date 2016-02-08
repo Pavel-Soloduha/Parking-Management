@@ -5,6 +5,7 @@ import com.brest.practice.models.Parking;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -22,8 +23,9 @@ public class ParkingDaoImpl implements ParkingDao {
     }
 
     public void updateParking(Integer parkingId, Parking parking) {
-        //todo
-        sessionFactory.getCurrentSession().update(Parking.class);
+        Parking park1 = (Parking) sessionFactory.getCurrentSession().load(Parking.class, parkingId);
+        park1.copy(parking);
+        sessionFactory.getCurrentSession().update(park1);
     }
 
     public Parking getParkingById(Integer parkingId) {
@@ -31,20 +33,11 @@ public class ParkingDaoImpl implements ParkingDao {
     }
 
     public List<Parking> getAllParkings() {
-        try{
-            Criteria criteria = sessionFactory.
-                    getCurrentSession().
-                    createCriteria(Parking.class);
-            return criteria.list();
-        } catch (HibernateException e){
-            e.printStackTrace();
-        }
-
-        return null;
+        return sessionFactory.getCurrentSession().createCriteria(Parking.class).list();
     }
 
     public void deleteParking(Integer parkingId) {
-        Parking parking = (Parking) sessionFactory.getCurrentSession().get(Parking.class, parkingId);
+        Parking parking = (Parking) sessionFactory.getCurrentSession().load(Parking.class, parkingId);
 
         if (parking != null){
             sessionFactory.getCurrentSession().delete(parking);
