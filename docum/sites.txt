@@ -10,3 +10,5 @@ https://spring.io/guides/gs/validating-form-input/
 валидация в спринге
 http://stackoverflow.com/questions/12146298/spring-mvc-how-to-perform-validation
 http://stackoverflow.com/questions/12660262/spring-mvc-hibernate-data-validation-strategies/12661291#12661291
+
+https://github.com/turbulenz/turbulenz_engine

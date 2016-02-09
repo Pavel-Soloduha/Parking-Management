@@ -17,7 +17,7 @@ public class ParkingController {
 
     private static String VERSION = "1.0";
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/parkings", method = RequestMethod.GET)
     public @ResponseBody List<Parking> getAllParkings() {
         List<Parking> parkings = parkingService.getAllParkings();
         for(Parking item : parkings) {
@@ -31,7 +31,7 @@ public class ParkingController {
         return parkingService.getParkingDto();
     }
 
-    @RequestMapping(value = "parking", method = RequestMethod.POST)
+    @RequestMapping(value = "/parking", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public void addParking(@RequestBody Parking parking) {
         parkingService.addParking(parking);
