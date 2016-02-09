@@ -1,6 +1,9 @@
 package com.brest.practice.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -13,12 +16,18 @@ public class Parking {
     @Column(name = "parkingId")
     private Integer parkingId;
 
+    @NotNull
+    @Min(value = 1)
     @Column(name = "amountPlace")
     private Integer amountPlace;
 
+    @NotNull
+    @Min(value = 1)
     @Column(name = "amountFloor")
     private Integer amountFloor;
 
+    @NotNull
+    @Size(min = 10, max = 45)
     @Column(name = "address")
     private String address;
 

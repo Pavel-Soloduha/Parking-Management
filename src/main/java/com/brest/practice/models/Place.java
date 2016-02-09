@@ -1,6 +1,8 @@
 package com.brest.practice.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 /**
  * Created by emergency on 2/8/16.
@@ -15,9 +17,12 @@ public class Place {
     @Column(name = "placeId")
     private Integer placeId;
 
+    @NotNull
+    @Min(value = 1)
     @Column(name = "floor")
     private Integer floor;
 
+    @NotNull
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "parkingId")
     private Parking parking;

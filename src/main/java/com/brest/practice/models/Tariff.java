@@ -1,6 +1,9 @@
 package com.brest.practice.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -17,9 +20,13 @@ public class Tariff {
     @Column(name = "tariffId")
     private Integer tariffId;
 
+    @NotNull
+    @Min(value = 0)
     @Column(name = "costPerHour")
     private Double costPerHour;
 
+    @NotNull
+    @Size(min = 10, max = 255)
     @Column(name = "description")
     private String description;
 

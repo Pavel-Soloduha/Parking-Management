@@ -1,3 +1,15 @@
+Обучение js
 https://developer.mozilla.org/ru/docs/Web/JavaScript
 
+Изучение и примеры для webgl
 http://media.tojicode.com/q3bsp/
+
+Пример валидации формы при помощи спринга
+https://spring.io/guides/gs/validating-form-input/
+
+валидация в спринге
+http://stackoverflow.com/questions/12146298/spring-mvc-how-to-perform-validation
+http://stackoverflow.com/questions/12660262/spring-mvc-hibernate-data-validation-strategies/12661291#12661291
+
+список всех аннотаций hibernate
+https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Web_Platform/5/html-single/Hibernate_Validator_Reference_Guide/index.html
