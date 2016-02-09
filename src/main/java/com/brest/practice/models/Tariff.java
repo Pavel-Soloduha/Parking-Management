@@ -76,6 +76,7 @@ public class Tariff {
                 '}';
     }
 
+    //todo Am i necessary?
     public void copy(Tariff tariff) {
         this.costPerHour = tariff.costPerHour;
         this.description = tariff.description;
