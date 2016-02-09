@@ -1,5 +1,7 @@
 package com.brest.practice.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
@@ -30,6 +32,8 @@ public class Tariff {
     @Column(name = "description")
     private String description;
 
+    //// FIXME: 2/9/16
+    @JsonIgnore
     @ManyToMany(mappedBy = "tariffs")
     private Set<Parking> parkings = new HashSet<Parking>();
 

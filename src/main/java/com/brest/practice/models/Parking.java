@@ -1,5 +1,7 @@
 package com.brest.practice.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
@@ -17,6 +19,11 @@ public class Parking {
     private Integer parkingId;
 
     @NotNull
+    @Min(value = 0)
+    @Column(name = "busyPlace")
+    private Integer busyPlace;
+
+    @NotNull
     @Min(value = 1)
     @Column(name = "amountPlace")
     private Integer amountPlace;
@@ -31,12 +38,16 @@ public class Parking {
     @Column(name = "address")
     private String address;
 
+    //// FIXME: 2/9/16 
+    @JsonIgnore
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "Parking_Tariff",
         joinColumns = { @JoinColumn(name = "parkingId") },
         inverseJoinColumns = { @JoinColumn(name  = "tariffId") })
     Set<Tariff> tariffs = new HashSet<Tariff>();
 
+    //// FIXME: 2/9/16
+    @JsonIgnore
     @OneToMany(mappedBy = "parking")
     Set<Place> places = new HashSet<Place>();
 
@@ -67,6 +78,13 @@ public class Parking {
     }
     public void setParkingId(Integer parkingId) {
         this.parkingId = parkingId;
+    }
+
+    public Integer getBusyPlace() {
+        return busyPlace;
+    }
+    public void setBusyPlace(Integer busyPlace) {
+        this.busyPlace = busyPlace;
     }
 
     public Integer getAmountPlace() {
@@ -115,7 +133,6 @@ public class Parking {
     public void deletePlace(Place place) {
         places.remove(place);
     }
-
 
     @Override
     public String toString() {

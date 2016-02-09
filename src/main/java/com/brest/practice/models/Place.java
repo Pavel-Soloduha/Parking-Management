@@ -1,6 +1,7 @@
 package com.brest.practice.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
@@ -21,6 +22,13 @@ public class Place {
     @Min(value = 1)
     @Column(name = "floor")
     private Integer floor;
+
+    //костыль тк mysql не знает тип boolean
+    @NotNull
+    @Min(value = 0)
+    @Max(value = 1)
+    @Column(name = "busy")
+    private Boolean isBusy;
 
     @NotNull
     @ManyToOne(cascade = CascadeType.ALL)
