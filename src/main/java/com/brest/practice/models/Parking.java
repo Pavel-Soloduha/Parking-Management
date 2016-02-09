@@ -1,11 +1,7 @@
 package com.brest.practice.models;
 
-import org.hibernate.annotations.IndexColumn;
-
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -13,8 +9,8 @@ import java.util.Set;
 public class Parking {
 
     @Id
-    @Column(name = "parkingId")
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "parkingId")
     private Integer parkingId;
 
     @Column(name = "amountPlace")
@@ -32,18 +28,16 @@ public class Parking {
         inverseJoinColumns = { @JoinColumn(name  = "tariffId") })
     Set<Tariff> tariffs = new HashSet<Tariff>();
 
-    //todo check me
-//    @OneToMany(cascade = CascadeType.ALL)
-//    @JoinTable(name = "Parking_Place",
-//        joinColumns = { @JoinColumn(name = "parkingId") },
-//        inverseJoinColumns = { @JoinColumn(name = "placeId") })
-//    @OneToMany(mappedBy = "Parking")
-    @OneToMany(cascade={CascadeType.ALL})
-    @JoinColumn(name="parkingId")
-    List<Place> places = new ArrayList<Place>();
+    @OneToMany(mappedBy = "parking")
+    Set<Place> places = new HashSet<Place>();
 
     public Parking() {
 
+    }
+    public Parking(Integer amountPlace, Integer amountFloor, String address) {
+        this.amountPlace = amountPlace;
+        this.amountFloor = amountFloor;
+        this.address = address;
     }
     public Parking(Integer parkingId, Integer amountPlace, Integer amountFloor, String address) {
         this.parkingId = parkingId;
@@ -51,13 +45,12 @@ public class Parking {
         this.amountFloor = amountFloor;
         this.address = address;
     }
-    public Parking(Integer parkingId, Integer amountPlace, Integer amountFloor, String address, Set<Tariff> tariffs, List<Place> places) {
+    public Parking(Integer parkingId, Integer amountPlace, Integer amountFloor, String address, Set<Tariff> tariffs) {
         this.parkingId = parkingId;
         this.amountPlace = amountPlace;
         this.amountFloor = amountFloor;
         this.address = address;
         this.tariffs = tariffs;
-        this.places = places;
     }
 
     public Integer getParkingId() {
@@ -101,10 +94,10 @@ public class Parking {
         tariffs.remove(tariff);
     }
 
-    public List<Place> getPlaces() {
+    public Set<Place> getPlaces() {
         return places;
     }
-    public void setPlaces(List<Place> places) {
+    public void setPlaces(Set<Place> places) {
         this.places = places;
     }
     public void addPlace(Place place) {
@@ -114,6 +107,7 @@ public class Parking {
         places.remove(place);
     }
 
+
     @Override
     public String toString() {
         return "Parking{" +
@@ -121,7 +115,6 @@ public class Parking {
                 ", amountPlace=" + amountPlace +
                 ", address='" + address + '\'' +
                 ", tariffs=" + tariffs.toString() +
-                ", places=" + places.toString() +
                 '}';
     }
 
@@ -129,6 +122,5 @@ public class Parking {
         this.amountPlace = parking.amountPlace;
         this.address = parking.address;
         this.tariffs = parking.tariffs;
-        this.places = parking.places;
     }
 }

@@ -11,28 +11,27 @@ import javax.persistence.*;
 public class Place {
 
     @Id
-    @Column(name = "placeId")
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "placeId")
     private Integer placeId;
 
     @Column(name = "floor")
     private Integer floor;
 
-    //todo add connection
-//    @ManyToOne
-//    @JoinColumn(name="parkingId")
-    @ManyToOne
-    @JoinColumn(name="department_id",
-            insertable=false, updatable=false,
-            nullable=false)
-    private Integer parkingId;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "parkingId")
+    private Parking parking;
 
     public Place() {
     }
-    public Place(Integer placeId, Integer floor, Integer parkingId) {
+    public Place(Integer floor, Parking parking) {
+        this.floor = floor;
+        this.parking = parking;
+    }
+    public Place(Integer placeId, Integer floor, Parking parking) {
         this.placeId = placeId;
         this.floor = floor;
-        this.parkingId = parkingId;
+        this.parking = parking;
     }
 
     public Integer getPlaceId() {
@@ -49,11 +48,11 @@ public class Place {
         this.floor = floor;
     }
 
-    public Integer getParkingId() {
-        return parkingId;
+    public Parking getParkingId() {
+        return parking;
     }
-    public void setParkingId(Integer parkingId) {
-        this.parkingId = parkingId;
+    public void setParkingId(Parking parking) {
+        this.parking = parking;
     }
 
     @Override
@@ -61,7 +60,7 @@ public class Place {
         return "Place{" +
                 "placeId=" + placeId +
                 ", floor=" + floor +
-                ", parkingId=" + parkingId +
+                ", Parking=" + parking +
                 '}';
     }
 }

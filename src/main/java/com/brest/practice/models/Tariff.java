@@ -13,8 +13,8 @@ import java.util.Set;
 public class Tariff {
 
     @Id
-    @Column(name = "tariffId")
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "tariffId")
     private Integer tariffId;
 
     @Column(name = "costPerHour")
@@ -27,6 +27,10 @@ public class Tariff {
     private Set<Parking> parkings = new HashSet<Parking>();
 
     public Tariff() {
+    }
+    public Tariff(Double costPerHour, String description) {
+        this.description = description;
+        this.costPerHour = costPerHour;
     }
     public Tariff(Integer tariffId, Double costPerHour, String description) {
         this.tariffId = tariffId;
