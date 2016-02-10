@@ -23,28 +23,33 @@ public class Tariff {
     private Integer tariffId;
 
     @NotNull
+    @Size(min = 3, max = 20)
+    @Column(name = "tariffName")
+    private String tariffName;
+
+    @NotNull
     @Min(value = 0)
     @Column(name = "costPerHour")
     private Double costPerHour;
 
     @NotNull
-    @Size(min = 10, max = 255)
+    @Size(min = 20, max = 150)
     @Column(name = "description")
     private String description;
 
-    //// FIXME: 2/9/16
+    @NotNull
+    @Column(name = "removed")
+    private Boolean isRemoved = false;
+
+    //todo
     @JsonIgnore
     @ManyToMany(mappedBy = "tariffs")
     private Set<Parking> parkings = new HashSet<Parking>();
 
     public Tariff() {
     }
-    public Tariff(Double costPerHour, String description) {
-        this.description = description;
-        this.costPerHour = costPerHour;
-    }
-    public Tariff(Integer tariffId, Double costPerHour, String description) {
-        this.tariffId = tariffId;
+    public Tariff(String tariffName, Double costPerHour, String description) {
+        this.tariffName = tariffName;
         this.costPerHour = costPerHour;
         this.description = description;
     }
@@ -54,6 +59,13 @@ public class Tariff {
     }
     public void setTariffId(Integer tariffId) {
         this.tariffId = tariffId;
+    }
+
+    public String getTariffName() {
+        return tariffName;
+    }
+    public void setTariffName(String tariffName) {
+        this.tariffName = tariffName;
     }
 
     public Double getCostPerHour() {
@@ -70,19 +82,35 @@ public class Tariff {
         this.description = description;
     }
 
+    public Boolean getRemoved() {
+        return isRemoved;
+    }
+    public void setRemoved(Boolean removed) {
+        isRemoved = removed;
+    }
+
+    public Set<Parking> getParkings() {
+        return parkings;
+    }
+    public void setParkings(Set<Parking> parkings) {
+        this.parkings = parkings;
+    }
+    public void addParking(Parking parking) {
+        parkings.add(parking);
+    }
+    public void deleteParking(Parking parking) {
+        parkings.remove(parking);
+    }
+
     @Override
     public String toString() {
         return "Tariff{" +
                 "tariffId=" + tariffId +
+                ", tariffName='" + tariffName + '\'' +
                 ", costPerHour=" + costPerHour +
                 ", description='" + description + '\'' +
+                ", isRemoved=" + isRemoved +
                 ", parkings=" + parkings +
                 '}';
-    }
-
-    //todo Am i necessary?
-    public void copy(Tariff tariff) {
-        this.costPerHour = tariff.costPerHour;
-        this.description = tariff.description;
     }
 }

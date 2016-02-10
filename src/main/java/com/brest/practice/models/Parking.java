@@ -19,9 +19,14 @@ public class Parking {
     private Integer parkingId;
 
     @NotNull
+    @Size(min = 5, max = 20)
+    @Column(name = "parkingName")
+    private String parkingName;
+
+    @NotNull
     @Min(value = 0)
-    @Column(name = "busyPlace")
-    private Integer busyPlace;
+    @Column(name = "amountBusy")
+    private Integer amountBusy;
 
     @NotNull
     @Min(value = 1)
@@ -38,39 +43,33 @@ public class Parking {
     @Column(name = "address")
     private String address;
 
-    //// FIXME: 2/9/16 
+    @NotNull
+    @Size(min = 10, max = 50)
+    @Column(name = "description")
+    private String description;
+
+    //todo
     @JsonIgnore
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "Parking_Tariff",
         joinColumns = { @JoinColumn(name = "parkingId") },
         inverseJoinColumns = { @JoinColumn(name  = "tariffId") })
-    Set<Tariff> tariffs = new HashSet<Tariff>();
+    private Set<Tariff> tariffs = new HashSet<Tariff>();
 
-    //// FIXME: 2/9/16
+    //todo
     @JsonIgnore
     @OneToMany(mappedBy = "parking")
-    Set<Place> places = new HashSet<Place>();
+    private Set<Place> places = new HashSet<Place>();
 
     public Parking() {
-
     }
-    public Parking(Integer amountPlace, Integer amountFloor, String address) {
+    public Parking(String parkingName, Integer amountBusy, Integer amountPlace, Integer amountFloor, String address, String description) {
+        this.parkingName = parkingName;
+        this.amountBusy = amountBusy;
         this.amountPlace = amountPlace;
         this.amountFloor = amountFloor;
         this.address = address;
-    }
-    public Parking(Integer parkingId, Integer amountPlace, Integer amountFloor, String address) {
-        this.parkingId = parkingId;
-        this.amountPlace = amountPlace;
-        this.amountFloor = amountFloor;
-        this.address = address;
-    }
-    public Parking(Integer parkingId, Integer amountPlace, Integer amountFloor, String address, Set<Tariff> tariffs) {
-        this.parkingId = parkingId;
-        this.amountPlace = amountPlace;
-        this.amountFloor = amountFloor;
-        this.address = address;
-        this.tariffs = tariffs;
+        this.description = description;
     }
 
     public Integer getParkingId() {
@@ -80,11 +79,18 @@ public class Parking {
         this.parkingId = parkingId;
     }
 
-    public Integer getBusyPlace() {
-        return busyPlace;
+    public String getParkingName() {
+        return parkingName;
     }
-    public void setBusyPlace(Integer busyPlace) {
-        this.busyPlace = busyPlace;
+    public void setParkingName(String parkingName) {
+        this.parkingName = parkingName;
+    }
+
+    public Integer getAmountBusy() {
+        return amountBusy;
+    }
+    public void setAmountBusy(Integer amountBusy) {
+        this.amountBusy = amountBusy;
     }
 
     public Integer getAmountPlace() {
@@ -106,6 +112,13 @@ public class Parking {
     }
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Set<Tariff> getTariffs() {
@@ -138,15 +151,25 @@ public class Parking {
     public String toString() {
         return "Parking{" +
                 "parkingId=" + parkingId +
+                ", parkingName='" + parkingName + '\'' +
+                ", amountBusy=" + amountBusy +
                 ", amountPlace=" + amountPlace +
+                ", amountFloor=" + amountFloor +
                 ", address='" + address + '\'' +
-                ", tariffs=" + tariffs.toString() +
+                ", description='" + description + '\'' +
+                ", tariffs=" + tariffs +
+                ", places=" + places +
                 '}';
     }
 
     public void copy(Parking parking) {
+        this.parkingName = parking.parkingName;
+        this.amountBusy = parking.amountBusy;
         this.amountPlace = parking.amountPlace;
+        this.amountFloor = parking.amountFloor;
         this.address = parking.address;
+        this.description = parking.description;
         this.tariffs = parking.tariffs;
+        this.places = parking.places;
     }
 }
