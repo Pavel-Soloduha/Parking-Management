@@ -22,6 +22,11 @@ public class Place {
 
     @NotNull
     @Min(value = 0)
+    @Column(name = "number")
+    private Integer number;
+
+    @NotNull
+    @Min(value = 0)
     @Column(name = "floor")
     private Integer floor;
 
@@ -56,13 +61,14 @@ public class Place {
 
     public Place() {
     }
-    public Place(Long placeId, Integer floor, Parking parking, Double price) {
-        this.placeId = placeId;
+    public Place(Integer number, Integer floor, Parking parking, Double price) {
+        this.number = number;
         this.floor = floor;
         this.parking = parking;
         this.price = price;
     }
-    public Place(Integer floor, Parking parking, String carAuth, Date startDate, Date endDate, Double price, Integer tariffId, Long placeId) {
+    public Place(Integer number, Integer floor, Parking parking, String carAuth, Date startDate, Date endDate, Double price, Integer tariffId, Long placeId) {
+        this.number = number;
         this.floor = floor;
         this.parking = parking;
         this.carAuth = carAuth;
@@ -78,6 +84,13 @@ public class Place {
     }
     public void setPlaceId(Long placeId) {
         this.placeId = placeId;
+    }
+
+    public Integer getNumber() {
+        return number;
+    }
+    public void setNumber(Integer number) {
+        this.number = number;
     }
 
     public Integer getFloor() {
@@ -140,6 +153,7 @@ public class Place {
     public String toString() {
         return "Place{" +
                 "placeId=" + placeId +
+                "number=" + number +
                 ", floor=" + floor +
                 ", parking=" + parking +
                 ", carAuth='" + carAuth + '\'' +
