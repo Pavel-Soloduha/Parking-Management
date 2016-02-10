@@ -18,4 +18,6 @@ public interface TariffDao {
     void updateTariff(Integer tariffId, Tariff tariff);
 
     void deleteTariff(Integer tariffId);
+
+    Integer getCountByName(String tariffName);
 }

@@ -21,7 +21,7 @@ public class TariffServiceImpl implements TariffService {
     private TariffDao tariffDao;
 
     public void addTariff(Tariff tariff) {
-
+        tariffDao.getCountByName(tariff.getTariffName());
     }
 
     public List<Tariff> getAllTariffs() {

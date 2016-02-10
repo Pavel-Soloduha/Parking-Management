@@ -51,6 +51,7 @@ public class Parking {
     //todo
     @JsonIgnore
     @ManyToMany(cascade = CascadeType.ALL)
+    //fetch.type = lazy
     @JoinTable(name = "Parking_Tariff",
         joinColumns = { @JoinColumn(name = "parkingId") },
         inverseJoinColumns = { @JoinColumn(name  = "tariffId") })

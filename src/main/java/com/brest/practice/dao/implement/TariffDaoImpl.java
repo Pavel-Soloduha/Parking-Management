@@ -2,6 +2,8 @@ package com.brest.practice.dao.implement;
 
 import com.brest.practice.dao.interfaces.TariffDao;
 import com.brest.practice.models.Tariff;
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -17,6 +19,7 @@ public class TariffDaoImpl implements TariffDao {
 
     @Autowired
     private SessionFactory sessionFactory;
+
 
     public void addTariff(Tariff tariff) {
 
@@ -36,5 +39,13 @@ public class TariffDaoImpl implements TariffDao {
 
     public void deleteTariff(Integer tariffId) {
 
+    }
+
+    public Integer getCountByName(String tariffName) {
+        Query query = sessionFactory.getCurrentSession()
+                .createQuery("from Tariff where tariffName = :name AND removed = 0");
+        query.setParameter("name", tariffName);
+        List <Tariff> tariffs = query.list();
+        return tariffs.size();
     }
 }

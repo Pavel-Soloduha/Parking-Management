@@ -1,0 +1,31 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+    <body>
+        <form action="#" th:action="@{/}" th:object="${tariff}" method="post">
+            <table>
+                <tr>
+                    <td>TariffId:</td>
+                    <td><input type="text" th:field="*{tariffId}" /></td>
+                    <td th:if="${#fields.hasErrors('tariffId')}" th:errors="*{tariffId}">TariffId Error</td>
+                </tr>
+                <tr>
+                    <td>TariffName:</td>
+                    <td><input type="text" th:field="*{tariffName}" /></td>
+                    <td th:if="${#fields.hasErrors('tariffName')}" th:errors="*{tariffName}">TariffName Error</td>
+                </tr>
+                <tr>
+                    <td>CostPerHour:</td>
+                    <td><input type="text" th:field="*{costPerHour}" /></td>
+                    <td th:if="${#fields.hasErrors('costPerHour')}" th:errors="*{costPerHour}">CostPerHour Error</td>
+                </tr>
+                <tr>
+                    <td>Description:</td>
+                    <td><input type="text" th:field="*{description}" /></td>
+                    <td th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Description Error</td>
+                </tr>
+                <tr>
+                    <td><button type="submit">Submit</button></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
