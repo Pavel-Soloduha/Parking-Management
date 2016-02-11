@@ -9,15 +9,17 @@ import java.util.List;
  */
 public interface TariffDao {
 
-    void addTariff(Tariff tariff);
+    Integer addTariff(Tariff tariff);
+
+    Integer getCountTariffByName(String tariffName);
+
+    Tariff getTariffById(Integer tariffId);
 
     List<Tariff> getAllTariffs();
 
-    Tariff getTariffById(Integer tariffId);
+    List<Tariff> getAllTariffsPlus();
 
     void updateTariff(Integer tariffId, Tariff tariff);
 
     void deleteTariff(Integer tariffId);
-
-    Integer getCountByName(String tariffName);
 }

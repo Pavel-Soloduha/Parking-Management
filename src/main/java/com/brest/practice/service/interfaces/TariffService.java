@@ -9,11 +9,15 @@ import java.util.List;
  */
 public interface TariffService {
 
-    void addTariff(Tariff tariff);
+    Integer addTariff(Tariff tariff);
+
+    Integer getCountTariffByName(String tariffName);
+
+    Tariff getTariffById(Integer tariffId);
 
     List<Tariff> getAllTariffs();
 
-    Tariff getTariffById(Integer tariffId);
+    List<Tariff> getAllTariffPlus();
 
     void updateTariff(Integer tariffId, Tariff tariff);
 

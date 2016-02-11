@@ -20,32 +20,47 @@ public class TariffDaoImpl implements TariffDao {
     @Autowired
     private SessionFactory sessionFactory;
 
+    public Integer addTariff(Tariff tariff) {
+        sessionFactory.getCurrentSession().save(tariff);
 
-    public void addTariff(Tariff tariff) {
-
-    }
-
-    public List<Tariff> getAllTariffs() {
-        return null;
+        return tariff.getTariffId();
     }
 
     public Tariff getTariffById(Integer tariffId) {
-        return null;
+        return (Tariff) sessionFactory.getCurrentSession().get(Tariff.class, tariffId);
+    }
+
+    public List<Tariff> getAllTariffs() {
+        Query query = sessionFactory.getCurrentSession()
+                .createQuery("from Tariff where removed = 0");
+        return query.list();
+    }
+
+    public List<Tariff> getAllTariffsPlus() {
+        Query query = sessionFactory.getCurrentSession()
+                .createQuery("from Tariff");
+        return query.list();
     }
 
     public void updateTariff(Integer tariffId, Tariff tariff) {
+        Tariff oldTariff = (Tariff) sessionFactory.getCurrentSession().get(Tariff.class, tariffId);
+        oldTariff.copy(tariff);
+
+        sessionFactory.getCurrentSession().update(oldTariff);
 
     }
 
     public void deleteTariff(Integer tariffId) {
+        Tariff tariff = (Tariff) sessionFactory.getCurrentSession().get(Tariff.class, tariffId);
+        tariff.setRemoved(true);
 
+        sessionFactory.getCurrentSession().update(tariff);
     }
 
-    public Integer getCountByName(String tariffName) {
+    public Integer getCountTariffByName(String tariffName) {
         Query query = sessionFactory.getCurrentSession()
-                .createQuery("from Tariff where tariffName = :name AND removed = 0");
+                .createQuery("select count(*) from Tariff where tariffName = :name AND removed = 0");
         query.setParameter("name", tariffName);
-        List <Tariff> tariffs = query.list();
-        return tariffs.size();
+        return (Integer) query.list().get(0);
     }
 }

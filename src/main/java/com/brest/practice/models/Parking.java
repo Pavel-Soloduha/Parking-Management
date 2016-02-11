@@ -49,8 +49,8 @@ public class Parking {
     private String description;
 
     //todo
-    @JsonIgnore
-    @ManyToMany(cascade = CascadeType.ALL)
+//    @JsonIgnore
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     //fetch.type = lazy
     @JoinTable(name = "Parking_Tariff",
         joinColumns = { @JoinColumn(name = "parkingId") },
@@ -58,8 +58,8 @@ public class Parking {
     private Set<Tariff> tariffs = new HashSet<Tariff>();
 
     //todo
-    @JsonIgnore
-    @OneToMany(mappedBy = "parking")
+//    @JsonIgnore
+    @OneToMany(mappedBy = "parking", fetch = FetchType.LAZY)
     private Set<Place> places = new HashSet<Place>();
 
     public Parking() {

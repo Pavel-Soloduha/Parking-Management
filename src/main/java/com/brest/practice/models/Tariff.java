@@ -42,8 +42,8 @@ public class Tariff {
     private Boolean isRemoved = false;
 
     //todo
-    @JsonIgnore
-    @ManyToMany(mappedBy = "tariffs")
+//    @JsonIgnore
+    @ManyToMany(mappedBy = "tariffs", fetch = FetchType.LAZY)
     private Set<Parking> parkings = new HashSet<Parking>();
 
     public Tariff() {
@@ -112,5 +112,14 @@ public class Tariff {
                 ", isRemoved=" + isRemoved +
                 ", parkings=" + parkings +
                 '}';
+    }
+
+    public void copy(Tariff tariff) {
+        this.tariffName = tariff.tariffName;
+        this.costPerHour = tariff.costPerHour;
+        this.description = tariff.description;
+        this.isRemoved = tariff.isRemoved;
+        //todo ?
+        this.parkings = tariff.parkings;
     }
 }

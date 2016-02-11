@@ -31,7 +31,7 @@ public class Place {
     private Integer floor;
 
     @NotNull
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "parkingId")
     private Parking parking;
 

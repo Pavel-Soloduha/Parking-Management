@@ -20,23 +20,35 @@ public class TariffServiceImpl implements TariffService {
     @Autowired
     private TariffDao tariffDao;
 
-    public void addTariff(Tariff tariff) {
-        tariffDao.getCountByName(tariff.getTariffName());
+    public Integer addTariff(Tariff tariff) {
+        if (tariffDao.getCountTariffByName(tariff.getTariffName()) > 0)
+            //add exception
+            throw new IllegalArgumentException();
+
+        return tariffDao.addTariff(tariff);
     }
 
-    public List<Tariff> getAllTariffs() {
-        return null;
+    public Integer getCountTariffByName(String tariffName) {
+        return tariffDao.getCountTariffByName(tariffName);
     }
 
     public Tariff getTariffById(Integer tariffId) {
-        return null;
+        return tariffDao.getTariffById(tariffId);
+    }
+
+    public List<Tariff> getAllTariffs() {
+        return tariffDao.getAllTariffs();
+    }
+
+    public List<Tariff> getAllTariffPlus() {
+        return tariffDao.getAllTariffsPlus();
     }
 
     public void updateTariff(Integer tariffId, Tariff tariff) {
-
+        tariffDao.updateTariff(tariffId, tariff);
     }
 
     public void deleteTariff(Integer tariffId) {
-
+        tariffDao.deleteTariff(tariffId);
     }
 }
