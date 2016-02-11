@@ -10,15 +10,17 @@ public interface ParkingService {
 
     Integer addParking(Parking parking);
 
-    void updateParking(Integer parkingId, Parking parking);
+    Integer getCountParkingByName(String parkingName);
 
     Parking getParkingById(Integer parkingId);
 
     List<Parking> getAllParkings();
 
-    void deleteParking(Integer parkingId);
+    List<Parking> getAllParkingsPlus();
 
-    void test();
+    void updateParking(Integer parkingId, Parking parking);
+
+    void deleteParking(Integer parkingId);
 
     ParkingDto getParkingDto();
 }

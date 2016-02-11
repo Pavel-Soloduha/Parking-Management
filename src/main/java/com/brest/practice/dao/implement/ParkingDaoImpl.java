@@ -2,10 +2,7 @@ package com.brest.practice.dao.implement;
 
 import com.brest.practice.dao.interfaces.ParkingDao;
 import com.brest.practice.models.Parking;
-import org.hibernate.Criteria;
-import org.hibernate.HibernateException;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
+import org.hibernate.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -22,10 +19,11 @@ public class ParkingDaoImpl implements ParkingDao {
         return parking.getParkingId();
     }
 
-    public void updateParking(Integer parkingId, Parking parking) {
-        Parking park1 = (Parking) sessionFactory.getCurrentSession().load(Parking.class, parkingId);
-        park1.copy(parking);
-        sessionFactory.getCurrentSession().update(park1);
+    public Integer getCountParkingByName(String parkingName) {
+        Query query = sessionFactory.getCurrentSession()
+                .createQuery("select count(*) from Parking where parkingName = :name AND removed = 0");
+        query.setParameter("name", parkingName);
+        return (Integer) query.list().get(0);
     }
 
     public Parking getParkingById(Integer parkingId) {
@@ -33,18 +31,26 @@ public class ParkingDaoImpl implements ParkingDao {
     }
 
     public List<Parking> getAllParkings() {
-        return sessionFactory.getCurrentSession().createCriteria(Parking.class).list();
+        Query query = sessionFactory.getCurrentSession()
+                .createQuery("from Parking where removed = 0");
+        return query.list();
+    }
+
+    public List<Parking> getAllParkingsPlus() {
+        Query query = sessionFactory.getCurrentSession()
+                .createQuery("from Parking");
+        return query.list();
+    }
+
+    public void updateParking(Integer parkingId, Parking parking) {
+        Parking oldParking = (Parking) sessionFactory.getCurrentSession().get(Parking.class, parkingId);
+        oldParking.copy(parking);
+        sessionFactory.getCurrentSession().update(oldParking);
     }
 
     public void deleteParking(Integer parkingId) {
-        Parking parking = (Parking) sessionFactory.getCurrentSession().load(Parking.class, parkingId);
-
-        if (parking != null){
-            sessionFactory.getCurrentSession().delete(parking);
-        }
-    }
-
-    public void test() {
-        System.out.println("call dao");
+        Parking parking = (Parking) sessionFactory.getCurrentSession().get(Parking.class, parkingId);
+        parking.setRemoved(true);
+        sessionFactory.getCurrentSession().update(parking);
     }
 }

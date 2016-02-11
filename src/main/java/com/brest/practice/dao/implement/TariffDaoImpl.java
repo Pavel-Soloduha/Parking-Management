@@ -22,8 +22,14 @@ public class TariffDaoImpl implements TariffDao {
 
     public Integer addTariff(Tariff tariff) {
         sessionFactory.getCurrentSession().save(tariff);
-
         return tariff.getTariffId();
+    }
+
+    public Integer getCountTariffByName(String tariffName) {
+        Query query = sessionFactory.getCurrentSession()
+                .createQuery("select count(*) from Tariff where tariffName = :name AND removed = 0");
+        query.setParameter("name", tariffName);
+        return (Integer) query.list().get(0);
     }
 
     public Tariff getTariffById(Integer tariffId) {
@@ -45,7 +51,6 @@ public class TariffDaoImpl implements TariffDao {
     public void updateTariff(Integer tariffId, Tariff tariff) {
         Tariff oldTariff = (Tariff) sessionFactory.getCurrentSession().get(Tariff.class, tariffId);
         oldTariff.copy(tariff);
-
         sessionFactory.getCurrentSession().update(oldTariff);
 
     }
@@ -53,14 +58,6 @@ public class TariffDaoImpl implements TariffDao {
     public void deleteTariff(Integer tariffId) {
         Tariff tariff = (Tariff) sessionFactory.getCurrentSession().get(Tariff.class, tariffId);
         tariff.setRemoved(true);
-
         sessionFactory.getCurrentSession().update(tariff);
-    }
-
-    public Integer getCountTariffByName(String tariffName) {
-        Query query = sessionFactory.getCurrentSession()
-                .createQuery("select count(*) from Tariff where tariffName = :name AND removed = 0");
-        query.setParameter("name", tariffName);
-        return (Integer) query.list().get(0);
     }
 }

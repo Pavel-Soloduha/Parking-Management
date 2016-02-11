@@ -48,6 +48,10 @@ public class Parking {
     @Column(name = "description")
     private String description;
 
+    @NotNull
+    @Column(name = "removed")
+    private Boolean isRemoved = false;
+
     //todo
 //    @JsonIgnore
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
@@ -120,6 +124,13 @@ public class Parking {
     }
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Boolean getRemoved() {
+        return isRemoved;
+    }
+    public void setRemoved(Boolean removed) {
+        isRemoved = removed;
     }
 
     public Set<Tariff> getTariffs() {

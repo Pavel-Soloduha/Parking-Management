@@ -20,11 +20,14 @@ public class ParkingServiceImpl implements ParkingService {
     private ParkingDao parkingDao;
 
     public Integer addParking(Parking parking) {
+        if (parkingDao.getCountParkingByName(parking.getParkingName()) > 0)
+            throw new IllegalArgumentException();
+
         return parkingDao.addParking(parking);
     }
 
-    public void updateParking(Integer parkingId, Parking parking) {
-        parkingDao.updateParking(parkingId, parking);
+    public Integer getCountParkingByName(String parkingName) {
+        return parkingDao.getCountParkingByName(parkingName);
     }
 
     public Parking getParkingById(Integer parkingId) {
@@ -35,13 +38,16 @@ public class ParkingServiceImpl implements ParkingService {
         return parkingDao.getAllParkings();
     }
 
-    public void deleteParking(Integer parkingId) {
-        parkingDao.deleteParking(parkingId);
+    public List<Parking> getAllParkingsPlus() {
+        return parkingDao.getAllParkingsPlus();
     }
 
-    public void test() {
-        System.out.println("call service");
-        parkingDao.test();
+    public void updateParking(Integer parkingId, Parking parking) {
+        parkingDao.updateParking(parkingId, parking);
+    }
+
+    public void deleteParking(Integer parkingId) {
+        parkingDao.deleteParking(parkingId);
     }
 
     public ParkingDto getParkingDto() {
