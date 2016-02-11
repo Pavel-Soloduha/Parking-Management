@@ -58,10 +58,4 @@ public class ParkingController {
         return VERSION;
     }
 
-    @RequestMapping(value = "/test", method = RequestMethod.GET)
-    @ResponseStatus(HttpStatus.OK)
-    public void test() {
-        System.out.println("call rest");
-        parkingService.test();
-    }
 }

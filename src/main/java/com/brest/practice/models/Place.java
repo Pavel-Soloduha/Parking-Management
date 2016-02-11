@@ -59,6 +59,10 @@ public class Place {
     @Column(name = "tariffId")
     private Integer tariffId;
 
+    @NotNull
+    @Column(name = "removed")
+    private Boolean isRemoved = false;
+
     public Place() {
     }
     public Place(Integer number, Integer floor, Parking parking, Double price) {
@@ -149,6 +153,13 @@ public class Place {
         this.tariffId = tariffId;
     }
 
+    public Boolean getRemoved() {
+        return isRemoved;
+    }
+    public void setRemoved(Boolean removed) {
+        isRemoved = removed;
+    }
+
     @Override
     public String toString() {
         return "Place{" +
@@ -162,5 +173,17 @@ public class Place {
                 ", price=" + price +
                 ", tariffId=" + tariffId +
                 '}';
+    }
+
+    public void copy(Place place) {
+        this.number = place.number;
+        this.floor = place.floor;
+        this.parking = place.parking;
+        this.carAuth = place.carAuth;
+        this.startDate = place.startDate;
+        this.endDate = place.endDate;
+        this.price = place.price;
+        this.tariffId = place.tariffId;
+        this.isRemoved = place.isRemoved;
     }
 }
