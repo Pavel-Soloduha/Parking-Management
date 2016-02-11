@@ -5,10 +5,13 @@ import com.brest.practice.models.Place;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
  * Created by emergency on 2/11/16.
  */
+
+@Component
 public class PlaceDaoImpl implements PlaceDao {
 
     @Autowired

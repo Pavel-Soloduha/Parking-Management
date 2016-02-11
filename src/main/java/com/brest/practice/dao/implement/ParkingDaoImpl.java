@@ -4,11 +4,11 @@ import com.brest.practice.dao.interfaces.ParkingDao;
 import com.brest.practice.models.Parking;
 import org.hibernate.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Repository
+@Component
 public class ParkingDaoImpl implements ParkingDao {
 
     @Autowired

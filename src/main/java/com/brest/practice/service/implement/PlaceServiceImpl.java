@@ -4,10 +4,15 @@ import com.brest.practice.dao.interfaces.PlaceDao;
 import com.brest.practice.models.Place;
 import com.brest.practice.service.interfaces.PlaceService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * Created by emergency on 2/11/16.
  */
+
+@Service
+@Transactional
 public class PlaceServiceImpl implements PlaceService {
 
     @Autowired

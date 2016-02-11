@@ -35,10 +35,8 @@ public class Place {
     @JoinColumn(name = "parkingId")
     private Parking parking;
 
-    @NotNull
-    @Size(min = 4, max = 15)
-    @Column(name = "carAuth")
-    private String carAuth;
+    @OneToOne(mappedBy="place", cascade=CascadeType.ALL)
+    private CarInfo carInfo;
 
     @NotNull
     @Future
@@ -75,7 +73,6 @@ public class Place {
         this.number = number;
         this.floor = floor;
         this.parking = parking;
-        this.carAuth = carAuth;
         this.startDate = startDate;
         this.endDate = endDate;
         this.price = price;
@@ -118,11 +115,11 @@ public class Place {
         this.parking = parking;
     }
 
-    public String getCarAuth() {
-        return carAuth;
+    public CarInfo getCarInfo() {
+        return carInfo;
     }
-    public void setCarAuth(String carAuth) {
-        this.carAuth = carAuth;
+    public void setCarInfo(CarInfo carInfo) {
+        this.carInfo = carInfo;
     }
 
     public Date getStartDate() {
@@ -166,8 +163,7 @@ public class Place {
                 "placeId=" + placeId +
                 "number=" + number +
                 ", floor=" + floor +
-                ", parking=" + parking +
-                ", carAuth='" + carAuth + '\'' +
+                ", parking=" + parking + '\'' +
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +
                 ", price=" + price +
@@ -179,7 +175,6 @@ public class Place {
         this.number = place.number;
         this.floor = place.floor;
         this.parking = place.parking;
-        this.carAuth = place.carAuth;
         this.startDate = place.startDate;
         this.endDate = place.endDate;
         this.price = place.price;
