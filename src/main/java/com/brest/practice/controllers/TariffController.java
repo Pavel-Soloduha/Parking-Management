@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
  */
 
 @RestController
+@RequestMapping(value = "/tariff/")
 public class TariffController {
 
     ///tariff добавить

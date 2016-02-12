@@ -48,17 +48,20 @@ public class TariffServiceImpl implements TariffService {
     public TariffDto getTariffById(Integer tariffId) {
         List<Tariff> tariffs = new ArrayList<Tariff>();
         tariffs.add(tariffDao.getTariffById(tariffId));
+        nullificationList(tariffs);
         TariffDto tariffDto = new TariffDto(tariffs.size(), tariffs);
         return tariffDto;
     }
 
     public TariffDto getAllTariffs() {
         List<Tariff> tariffs = tariffDao.getAllTariffs();
+        nullificationList(tariffs);
         return new TariffDto(tariffs.size(), tariffs);
     }
 
     public TariffDto getAllTariffPlus() {
         List<Tariff> tariffs = tariffDao.getAllTariffsPlus();
+        nullificationList(tariffs);
         return new TariffDto(tariffs.size(), tariffs);
     }
 
