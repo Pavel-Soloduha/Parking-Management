@@ -1,7 +1,6 @@
 package com.brest.practice.service.interfaces;
 
 
-import com.brest.practice.models.Parking;
 import com.brest.practice.dto.ParkingDto;
 
 import java.util.List;

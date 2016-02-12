@@ -169,6 +169,7 @@ public class Parking {
                 ", amountFloor=" + amountFloor +
                 ", address='" + address + '\'' +
                 ", description='" + description + '\'' +
+                ", isRemoved=" + isRemoved +
                 ", tariffs=" + tariffs +
                 ", places=" + places +
                 '}';

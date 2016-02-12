@@ -22,6 +22,14 @@ public class PlaceServiceImpl implements PlaceService {
     @Autowired
     PlaceDao placeDao;
 
+    static void nullificationList(List<Place> places) {
+        for(Place place : places) {
+            place.setParking(null);
+            place.getCarInfo().setPlace(null);
+        }
+
+    }
+
     public Long addPlace(PlaceDto placeDto) {
         Place place = placeDto.getPlaceList().get(0);
         if (placeDao.getCountPlace(place.getNumber(), place.getParkingId().getParkingId()) > 0)
@@ -35,17 +43,20 @@ public class PlaceServiceImpl implements PlaceService {
 
     public PlaceDto getAllPlaces() {
         List<Place> places = placeDao.getAllPlaces();
+        nullificationList(places);
         return new PlaceDto(places.size(), places);
     }
 
     public PlaceDto getAllPlacesPlus() {
         List<Place> places = placeDao.getAllPlacesPlus();
+        nullificationList(places);
         return new PlaceDto(places.size(), places);
     }
 
     public PlaceDto getPlaceById(Long placeId) {
         List<Place> places = new ArrayList<Place>();
         places.add(placeDao.getPlaceById(placeId));
+        nullificationList(places);
         return new PlaceDto(1, places);
     }
 

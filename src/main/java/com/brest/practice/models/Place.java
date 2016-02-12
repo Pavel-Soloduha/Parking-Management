@@ -161,13 +161,15 @@ public class Place {
     public String toString() {
         return "Place{" +
                 "placeId=" + placeId +
-                "number=" + number +
+                ", number=" + number +
                 ", floor=" + floor +
-                ", parking=" + parking + '\'' +
+                ", parking=" + parking +
+                ", carInfo=" + carInfo +
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +
                 ", price=" + price +
                 ", tariffId=" + tariffId +
+                ", isRemoved=" + isRemoved +
                 '}';
     }
 

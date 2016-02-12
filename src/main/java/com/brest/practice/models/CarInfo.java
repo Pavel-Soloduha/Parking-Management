@@ -107,4 +107,17 @@ public class CarInfo {
     public void setPlace(Place place) {
         this.place = place;
     }
+
+    @Override
+    public String toString() {
+        return "CarInfo{" +
+                "placeId=" + placeId +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phone='" + phone + '\'' +
+                ", carNumber='" + carNumber + '\'' +
+                ", isRemoved=" + isRemoved +
+                ", place=" + place +
+                '}';
+    }
 }
