@@ -1,4 +1,6 @@
-package com.brest.practice.models;
+package com.brest.practice.dto;
+
+import com.brest.practice.models.Parking;
 
 import java.util.List;
 

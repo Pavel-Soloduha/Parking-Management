@@ -1,12 +1,14 @@
 package com.brest.practice.service.implement;
 
 import com.brest.practice.dao.interfaces.TariffDao;
+import com.brest.practice.dto.TariffDto;
 import com.brest.practice.models.Tariff;
 import com.brest.practice.service.interfaces.TariffService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,7 +22,8 @@ public class TariffServiceImpl implements TariffService {
     @Autowired
     private TariffDao tariffDao;
 
-    public Integer addTariff(Tariff tariff) {
+    public Integer addTariff(TariffDto tariffDto) {
+        Tariff tariff = tariffDto.getTariffs().get(0);
         if (tariffDao.getCountTariffByName(tariff.getTariffName()) > 0)
             //add exception
             throw new IllegalArgumentException();
@@ -32,20 +35,25 @@ public class TariffServiceImpl implements TariffService {
         return tariffDao.getCountTariffByName(tariffName);
     }
 
-    public Tariff getTariffById(Integer tariffId) {
-        return tariffDao.getTariffById(tariffId);
+    public TariffDto getTariffById(Integer tariffId) {
+        List<Tariff> tariffs = new ArrayList<Tariff>();
+        tariffs.add(tariffDao.getTariffById(tariffId));
+        TariffDto tariffDto = new TariffDto(tariffs.size(), tariffs);
+        return tariffDto;
     }
 
-    public List<Tariff> getAllTariffs() {
-        return tariffDao.getAllTariffs();
+    public TariffDto getAllTariffs() {
+        List<Tariff> tariffs = tariffDao.getAllTariffs();
+        return new TariffDto(tariffs.size(), tariffs);
     }
 
-    public List<Tariff> getAllTariffPlus() {
-        return tariffDao.getAllTariffsPlus();
+    public TariffDto getAllTariffPlus() {
+        List<Tariff> tariffs = tariffDao.getAllTariffsPlus();
+        return new TariffDto(tariffs.size(), tariffs);
     }
 
-    public void updateTariff(Integer tariffId, Tariff tariff) {
-        tariffDao.updateTariff(tariffId, tariff);
+    public void updateTariff(TariffDto tariffDto) {
+        tariffDao.updateTariff(tariffDto.getTariffs().get(0));
     }
 
     public void deleteTariff(Integer tariffId) {

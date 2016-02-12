@@ -19,7 +19,7 @@ public interface TariffDao {
 
     List<Tariff> getAllTariffsPlus();
 
-    void updateTariff(Integer tariffId, Tariff tariff);
+    void updateTariff(Tariff tariff);
 
     void deleteTariff(Integer tariffId);
 }

@@ -7,6 +7,8 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 /**
  * Created by emergency on 2/11/16.
  */
@@ -34,8 +36,20 @@ public class PlaceDaoImpl implements PlaceDao {
         return (Place) sessionFactory.getCurrentSession().get(Place.class, placeId);
     }
 
-    public void updatePlace(Long placeId, Place place) {
-        Place oldPlace = (Place) sessionFactory.getCurrentSession().get(Place.class, placeId);
+    public List<Place> getAllPlaces() {
+        Query query = sessionFactory.getCurrentSession()
+                .createQuery("from Place where removed = 0");
+        return query.list();
+    }
+
+    public List<Place> getAllPlacesPlus() {
+        Query query = sessionFactory.getCurrentSession()
+                .createQuery("from Place");
+        return query.list();
+    }
+
+    public void updatePlace(Place place) {
+        Place oldPlace = (Place) sessionFactory.getCurrentSession().get(Place.class, place.getPlaceId());
         oldPlace.copy(place);
         sessionFactory.getCurrentSession().update(oldPlace);
     }

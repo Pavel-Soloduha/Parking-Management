@@ -47,8 +47,8 @@ public class TariffDaoImpl implements TariffDao {
         return query.list();
     }
 
-    public void updateTariff(Integer tariffId, Tariff tariff) {
-        Tariff oldTariff = (Tariff) sessionFactory.getCurrentSession().get(Tariff.class, tariffId);
+    public void updateTariff(Tariff tariff) {
+        Tariff oldTariff = (Tariff) sessionFactory.getCurrentSession().get(Tariff.class, tariff.getTariffId());
         oldTariff.copy(tariff);
         sessionFactory.getCurrentSession().update(oldTariff);
 

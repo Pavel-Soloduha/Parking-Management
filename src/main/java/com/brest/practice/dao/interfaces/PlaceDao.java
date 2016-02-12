@@ -2,6 +2,8 @@ package com.brest.practice.dao.interfaces;
 
 import com.brest.practice.models.Place;
 
+import java.util.List;
+
 /**
  * Created by emergency on 2/11/16.
  */
@@ -13,7 +15,11 @@ public interface PlaceDao {
 
     Place getPlaceById(Long placeId);
 
-    void updatePlace(Long placeId, Place place);
+    List<Place> getAllPlaces();
+
+    List<Place> getAllPlacesPlus();
+
+    void updatePlace(Place place);
 
     void deletePlace(Long placeId);
 }

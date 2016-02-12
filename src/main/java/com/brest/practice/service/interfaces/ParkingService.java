@@ -2,25 +2,23 @@ package com.brest.practice.service.interfaces;
 
 
 import com.brest.practice.models.Parking;
-import com.brest.practice.models.ParkingDto;
+import com.brest.practice.dto.ParkingDto;
 
 import java.util.List;
 
 public interface ParkingService {
 
-    Integer addParking(Parking parking);
+    Integer addParking(ParkingDto parkingDto);
 
     Integer getCountParkingByName(String parkingName);
 
-    Parking getParkingById(Integer parkingId);
+    ParkingDto getParkingById(Integer parkingId);
 
-    List<Parking> getAllParkings();
+    ParkingDto getAllParkings();
 
-    List<Parking> getAllParkingsPlus();
+    ParkingDto getAllParkingsPlus();
 
-    void updateParking(Integer parkingId, Parking parking);
+    void updateParking(ParkingDto parkingDto);
 
     void deleteParking(Integer parkingId);
-
-    ParkingDto getParkingDto();
 }

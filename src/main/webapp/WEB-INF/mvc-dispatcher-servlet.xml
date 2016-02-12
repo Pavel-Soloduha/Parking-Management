@@ -35,6 +35,7 @@
                 <value>com.brest.practice.models.Parking</value>
                 <value>com.brest.practice.models.Tariff</value>
                 <value>com.brest.practice.models.Place</value>
+                <value>com.brest.practice.models.CarInfo</value>
             </beans:list>
         </property>
         <property name="hibernateProperties">

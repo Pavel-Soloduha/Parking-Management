@@ -39,7 +39,7 @@ public class Place {
     private CarInfo carInfo;
 
     @NotNull
-    @Future
+//    @Future
     @Column(name = "startDate")
     private Date startDate;
 

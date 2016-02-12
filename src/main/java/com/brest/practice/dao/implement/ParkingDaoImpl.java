@@ -42,8 +42,8 @@ public class ParkingDaoImpl implements ParkingDao {
         return query.list();
     }
 
-    public void updateParking(Integer parkingId, Parking parking) {
-        Parking oldParking = (Parking) sessionFactory.getCurrentSession().get(Parking.class, parkingId);
+    public void updateParking(Parking parking) {
+        Parking oldParking = (Parking) sessionFactory.getCurrentSession().get(Parking.class, parking.getParkingId());
         oldParking.copy(parking);
         sessionFactory.getCurrentSession().update(oldParking);
     }

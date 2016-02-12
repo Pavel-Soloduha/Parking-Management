@@ -1,11 +1,15 @@
 package com.brest.practice.service.implement;
 
 import com.brest.practice.dao.interfaces.PlaceDao;
+import com.brest.practice.dto.PlaceDto;
 import com.brest.practice.models.Place;
 import com.brest.practice.service.interfaces.PlaceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by emergency on 2/11/16.
@@ -18,7 +22,8 @@ public class PlaceServiceImpl implements PlaceService {
     @Autowired
     PlaceDao placeDao;
 
-    public Long addPlace(Place place) {
+    public Long addPlace(PlaceDto placeDto) {
+        Place place = placeDto.getPlaceList().get(0);
         if (placeDao.getCountPlace(place.getNumber(), place.getParkingId().getParkingId()) > 0)
             throw new IllegalArgumentException();
         return placeDao.addPlace(place);
@@ -28,12 +33,25 @@ public class PlaceServiceImpl implements PlaceService {
         return placeDao.getCountPlace(number, parkingId);
     }
 
-    public Place getPlaceById(Long placeId) {
-        return placeDao.getPlaceById(placeId);
+    public PlaceDto getAllPlaces() {
+        List<Place> places = placeDao.getAllPlaces();
+        return new PlaceDto(places.size(), places);
     }
 
-    public void updatePlace(Long placeId, Place place) {
-        placeDao.updatePlace(placeId, place);
+    public PlaceDto getAllPlacesPlus() {
+        List<Place> places = placeDao.getAllPlacesPlus();
+        return new PlaceDto(places.size(), places);
+    }
+
+    public PlaceDto getPlaceById(Long placeId) {
+        List<Place> places = new ArrayList<Place>();
+        places.add(placeDao.getPlaceById(placeId));
+        return new PlaceDto(1, places);
+    }
+
+    public void updatePlace(PlaceDto placeDto) {
+        Place place = placeDto.getPlaceList().get(0);
+        placeDao.updatePlace(place);
     }
 
     public void deletePlace(Long placeId) {

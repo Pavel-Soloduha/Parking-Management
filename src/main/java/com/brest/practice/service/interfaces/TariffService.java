@@ -1,5 +1,6 @@
 package com.brest.practice.service.interfaces;
 
+import com.brest.practice.dto.TariffDto;
 import com.brest.practice.models.Tariff;
 
 import java.util.List;
@@ -9,17 +10,17 @@ import java.util.List;
  */
 public interface TariffService {
 
-    Integer addTariff(Tariff tariff);
+    Integer addTariff(TariffDto tariffDto);
 
     Integer getCountTariffByName(String tariffName);
 
-    Tariff getTariffById(Integer tariffId);
+    TariffDto getTariffById(Integer tariffId);
 
-    List<Tariff> getAllTariffs();
+    TariffDto getAllTariffs();
 
-    List<Tariff> getAllTariffPlus();
+    TariffDto getAllTariffPlus();
 
-    void updateTariff(Integer tariffId, Tariff tariff);
+    void updateTariff(TariffDto tariffDto);
 
     void deleteTariff(Integer tariffId);
 }

@@ -1,19 +1,23 @@
 package com.brest.practice.service.interfaces;
 
-import com.brest.practice.models.Place;
+import com.brest.practice.dto.PlaceDto;
 
 /**
  * Created by emergency on 2/11/16.
  */
 public interface PlaceService {
 
-    Long addPlace(Place place);
+    Long addPlace(PlaceDto placeDto);
 
     Integer getCountPlace(Integer number, Integer parkingId);
 
-    Place getPlaceById(Long placeId);
+    PlaceDto getAllPlaces();
 
-    void updatePlace(Long placeId, Place place);
+    PlaceDto getAllPlacesPlus();
+
+    PlaceDto getPlaceById(Long placeId);
+
+    void updatePlace(PlaceDto placeDto);
 
     void deletePlace(Long placeId);
 }
