@@ -83,35 +83,33 @@ function fillPlaceTable() {
     });
 };
 
-//function createCarInfoTable() {
-//    $('#carinfotable').append('<table></table>');
-//    var table = $('#carinfotable').children();
-//    table.append("<tr>"
-//    + "<td>First name</td>"
-//    + "<td>Last name</td>"
-//    + "<td>Contact phone</td>"
-//    + "<td>Car number</td>"
-//    + "</tr>");
-//    fillCarInfoTable();
+function createCarInfoTable() {
+    $('#carinfotable').append('<table></table>');
+    var table = $('#carinfotable').children();
+    table.append("<tr>"
+    + "<td>First name</td>"
+    + "<td>Last name</td>"
+    + "<td>Contact phone</td>"
+    + "<td>Car number</td>"
+    + "</tr>");
+    fillCarInfoTable();
 //    console.log('hi');
-//};
-//function fillCarInfoTable() {
-//    $.get("http://localhost:8080/parkingManagement/place/", function(data, status){
-//        var info = data.parkings;
-//        var trHTML = '';
-//        $.each(info, function (i, item) {
-//            trHTML += '<tr><td>' + item.parkingName + '</td>'
-//            + '<td>' + (item.amountPlace - item.amountBusy) + '</td>'
-//            + '<td>' + item.amountBusy + '</td>'
-//            + '<td>' + item.amountFloor + '</td>'
-//            + '<td>' + item.address + '</td>'
-//            + '<td>' + item.description + '</td>'
-//            + '</tr>';
-//        });
-//        var table = $('#carinfotable').children();
-//        table.append(trHTML);
-//    });
-//};
+};
+function fillCarInfoTable() {
+    $.get("http://localhost:8080/parkingManagement/place/", function(data, status){
+        var info = data.places;
+        var trHTML = '';
+        $.each(info, function (i, item) {
+            trHTML += '<tr><td>' + item.carInfo.firstName + '</td>'
+            + '<td>' + item.carInfo.lastName + '</td>'
+            + '<td>' + item.carInfo.phone + '</td>'
+            + '<td>' + item.carInfo.carNumber + '</td>'
+            + '</tr>';
+        });
+        var table = $('#carinfotable').children();
+        table.append(trHTML);
+    });
+};
 
 
 
@@ -119,5 +117,5 @@ $(document).ready(function (){
    createParkingTable();
    createTariffTable();
    createPlaceTable();
-//   createCarInfoTable();
+   createCarInfoTable();
 });
