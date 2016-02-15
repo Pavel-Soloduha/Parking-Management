@@ -1,28 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a254662-9f90-48a9-beeb-da5c4fa50de7" name="Default" comment="finalize">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docum/refs.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html-frame/css/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html-frame/parking.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html-frame/script/test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html-frame/tariff.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html-frame/test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html-frame/user_Tariff.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html-frame/worker_CarInfo.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html-frame/worker_Place.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/javascript-client/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/javascript-client/js/jquery.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/javascript-client/js/main.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/javascript-client/js/npm.js" afterPath="" />
+    <list default="true" id="6a254662-9f90-48a9-beeb-da5c4fa50de7" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html-frame/script/parking.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docum/tasks.txt" afterPath="$PROJECT_DIR$/docum/tasks.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html-frame/parking.html" afterPath="$PROJECT_DIR$/html-frame/parking.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html-frame/user_Parking.html" afterPath="$PROJECT_DIR$/html-frame/user_Parking.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/brest/practice/controllers/ParkingController.java" afterPath="$PROJECT_DIR$/src/main/java/com/brest/practice/controllers/ParkingController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/brest/practice/controllers/PlaceController.java" afterPath="$PROJECT_DIR$/src/main/java/com/brest/practice/controllers/PlaceController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/brest/practice/controllers/TariffController.java" afterPath="$PROJECT_DIR$/src/main/java/com/brest/practice/controllers/TariffController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/brest/practice/dto/PlaceDto.java" afterPath="$PROJECT_DIR$/src/main/java/com/brest/practice/dto/PlaceDto.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/brest/practice/service/implement/PlaceServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/brest/practice/service/implement/PlaceServiceImpl.java" />
     </list>
     <ignored path="Parking-Management.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,16 +35,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="worker_CarInfo.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/html-frame/worker_CarInfo.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.555555">
-              <caret line="38" column="23" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="user_Tariff.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html-frame/user_Tariff.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -74,19 +48,96 @@
       <file leaf-file-name="test.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html-frame/test.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.333333">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state vertical-scroll-proportion="-14.666667">
+              <caret line="22" column="42" selection-start-line="21" selection-start-column="3" selection-end-line="22" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tasks.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docum/tasks.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="1" column="28" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="parking.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html-frame/parking.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.6666665">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html-frame/script/test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.15418503">
-              <caret line="47" column="32" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="114" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="120" selection-end-column="3" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user_Parking.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/html-frame/user_Parking.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.44036698">
+              <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="parking.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html-frame/script/parking.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CarInfo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/brest/practice/models/CarInfo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="122" column="1" selection-start-line="122" selection-start-column="1" selection-end-line="122" selection-end-column="1" />
+              <folding>
+                <element signature="method#CarInfo#0;class#CarInfo#0" expanded="false" />
+                <element signature="method#CarInfo#1;class#CarInfo#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Parking.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/brest/practice/models/Parking.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+              <folding>
+                <element signature="e#294#301#0" expanded="false" />
+                <element signature="e#355#358#0" expanded="false" />
+                <element signature="e#479#487#0" expanded="false" />
+                <element signature="e#588#596#0" expanded="false" />
+                <element signature="e#687#695#0" expanded="false" />
+                <element signature="e#788#796#0" expanded="false" />
+                <element signature="e#889#897#0" expanded="false" />
+                <element signature="e#991#999#0" expanded="false" />
+                <element signature="e#1101#1109#0" expanded="false" />
+                <element signature="method#Parking#0;class#Parking#0" expanded="false" />
+                <element signature="method#Parking#1;class#Parking#0" expanded="false" />
+                <element signature="method#toString#0;class#Parking#0" expanded="false" />
+                <element signature="method#copy#0;class#Parking#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -108,16 +159,6 @@
                 <element signature="method#Tariff#1;class#Tariff#0" expanded="false" />
                 <element signature="method#copy#0;class#Tariff#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="worker_Place.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/html-frame/worker_Place.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.185185">
-              <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -145,7 +186,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/javascript-client/index.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/brest/practice/models/ParkingTariff.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/brest/practice/models/ParkingDto.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
@@ -177,13 +217,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/brest/practice/service/implement/ParkingServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/brest/practice/service/implement/CarInfoServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/brest/practice/service/implement/TariffServiceImpl.java" />
-        <option value="$PROJECT_DIR$/docum/tasks.txt" />
         <option value="$PROJECT_DIR$/html-frame/css/user.css" />
         <option value="$PROJECT_DIR$/html-frame/user_Current.html" />
         <option value="$PROJECT_DIR$/html-frame/worker.html" />
         <option value="$PROJECT_DIR$/html-frame/worker_CarInfo.html" />
         <option value="$PROJECT_DIR$/html-frame/user_Tariff.html" />
-        <option value="$PROJECT_DIR$/html-frame/parking.html" />
         <option value="$PROJECT_DIR$/html-frame/tariff.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/brest/practice/controllers/TariffController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/brest/practice/controllers/PlaceController.java" />
@@ -191,11 +229,14 @@
         <option value="$PROJECT_DIR$/docum/refs.txt" />
         <option value="$PROJECT_DIR$/html-frame/css/style.css" />
         <option value="$PROJECT_DIR$/src/main/java/com/brest/practice/models/Tariff.java" />
-        <option value="$PROJECT_DIR$/html-frame/user_Parking.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/brest/practice/dto/PlaceDto.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/brest/practice/service/implement/PlaceServiceImpl.java" />
         <option value="$PROJECT_DIR$/html-frame/test.html" />
         <option value="$PROJECT_DIR$/html-frame/script/test.js" />
+        <option value="$PROJECT_DIR$/html-frame/script/parking.js" />
+        <option value="$PROJECT_DIR$/html-frame/user_Parking.html" />
+        <option value="$PROJECT_DIR$/docum/tasks.txt" />
+        <option value="$PROJECT_DIR$/html-frame/parking.html" />
       </list>
     </option>
   </component>
@@ -422,6 +463,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="script" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Parking-Management" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Parking-Management" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="docum" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1089,7 +1144,19 @@
       <option name="project" value="LOCAL" />
       <updated>1455284374715</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="some refactor&#10;add generation tables with jQuery">
+      <created>1455533167430</created>
+      <option name="number" value="00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1455533167430</updated>
+    </task>
+    <task id="LOCAL-00047" summary="add generation carInfo table with jQuery">
+      <created>1455533868831</created>
+      <option name="number" value="00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1455533868831</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1103,7 +1170,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1440" height="846" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1115,17 +1182,17 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19522472" sideWeight="0.50431037" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29640287" sideWeight="0.505618" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286517" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286517" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="RESTClient" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8820225" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286517" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15517241" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2952586" sideWeight="0.49438202" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24157304" sideWeight="0.49568966" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2738764" sideWeight="0.49568966" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="102" y="127" width="1238" height="646" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286517" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286517" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -1169,8 +1236,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="some fix&#10;" />
-    <MESSAGE value="refactor ParkingDaoImpl&#10;add method copy in Parking" />
     <MESSAGE value="add model Tariff and Place&#10;refactor Parking" />
     <MESSAGE value="refactor model" />
     <MESSAGE value="refactor&#10;add db" />
@@ -1194,7 +1259,9 @@
     <MESSAGE value="add nullification function to delete usless links" />
     <MESSAGE value="refactor&#10;add Annotation @RequestMapping in controllers" />
     <MESSAGE value="finalize" />
-    <option name="LAST_COMMIT_MESSAGE" value="finalize" />
+    <MESSAGE value="some refactor&#10;add generation tables with jQuery" />
+    <MESSAGE value="add generation carInfo table with jQuery" />
+    <option name="LAST_COMMIT_MESSAGE" value="add generation carInfo table with jQuery" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1219,14 +1286,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1432,14 +1491,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docum/tasks.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07929515">
-          <caret line="3" column="64" selection-start-line="3" selection-start-column="64" selection-end-line="3" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/brest/practice/service/implement/ParkingServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.026431719">
@@ -1480,30 +1531,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
           <folding>
-            <element signature="e#1064#1065#0" expanded="true" />
-            <element signature="e#1117#1118#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/brest/practice/models/Parking.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="61" column="56" selection-start-line="58" selection-start-column="4" selection-end-line="61" selection-end-column="56" />
-          <folding>
-            <element signature="e#294#301#0" expanded="false" />
-            <element signature="e#355#358#0" expanded="false" />
-            <element signature="e#479#487#0" expanded="false" />
-            <element signature="e#588#596#0" expanded="false" />
-            <element signature="e#687#695#0" expanded="false" />
-            <element signature="e#788#796#0" expanded="false" />
-            <element signature="e#889#897#0" expanded="false" />
-            <element signature="e#991#999#0" expanded="false" />
-            <element signature="e#1101#1109#0" expanded="false" />
-            <element signature="method#Parking#0;class#Parking#0" expanded="false" />
-            <element signature="method#Parking#1;class#Parking#0" expanded="false" />
-            <element signature="method#toString#0;class#Parking#0" expanded="false" />
-            <element signature="method#copy#0;class#Parking#0" expanded="false" />
+            <element signature="e#1064#1065#0" expanded="false" />
+            <element signature="e#1117#1118#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1532,14 +1561,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html-frame/user_Parking.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.222221">
-          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/brest/practice/models/Place.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.13215859">
@@ -1547,25 +1568,6 @@
           <folding>
             <element signature="method#copy#0;class#Place#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/brest/practice/models/CarInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.0881057">
-          <caret line="122" column="1" selection-start-line="122" selection-start-column="1" selection-end-line="122" selection-end-column="1" />
-          <folding>
-            <element signature="method#CarInfo#0;class#CarInfo#0" expanded="false" />
-            <element signature="method#CarInfo#1;class#CarInfo#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html-frame/parking.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.6666665">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1635,14 +1637,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html-frame/user_Tariff.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.2222223">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/brest/practice/models/Tariff.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1662,18 +1656,91 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/html-frame/user_Tariff.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.2222223">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/html-frame/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.333333">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state vertical-scroll-proportion="-14.666667">
+          <caret line="22" column="42" selection-start-line="21" selection-start-column="3" selection-end-line="22" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/html-frame/script/test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15418503">
-          <caret line="47" column="32" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="114" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="120" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/brest/practice/models/CarInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="122" column="1" selection-start-line="122" selection-start-column="1" selection-end-line="122" selection-end-column="1" />
+          <folding>
+            <element signature="method#CarInfo#0;class#CarInfo#0" expanded="false" />
+            <element signature="method#CarInfo#1;class#CarInfo#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/brest/practice/models/Parking.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding>
+            <element signature="e#294#301#0" expanded="false" />
+            <element signature="e#355#358#0" expanded="false" />
+            <element signature="e#479#487#0" expanded="false" />
+            <element signature="e#588#596#0" expanded="false" />
+            <element signature="e#687#695#0" expanded="false" />
+            <element signature="e#788#796#0" expanded="false" />
+            <element signature="e#889#897#0" expanded="false" />
+            <element signature="e#991#999#0" expanded="false" />
+            <element signature="e#1101#1109#0" expanded="false" />
+            <element signature="method#Parking#0;class#Parking#0" expanded="false" />
+            <element signature="method#Parking#1;class#Parking#0" expanded="false" />
+            <element signature="method#toString#0;class#Parking#0" expanded="false" />
+            <element signature="method#copy#0;class#Parking#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html-frame/script/parking.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docum/tasks.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="28" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html-frame/parking.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.6666665">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html-frame/user_Parking.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44036698">
+          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
           <folding />
         </state>
       </provider>
