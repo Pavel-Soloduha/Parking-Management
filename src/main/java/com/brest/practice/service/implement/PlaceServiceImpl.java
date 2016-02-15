@@ -31,7 +31,7 @@ public class PlaceServiceImpl implements PlaceService {
     }
 
     public Long addPlace(PlaceDto placeDto) {
-        Place place = placeDto.getPlaceList().get(0);
+        Place place = placeDto.getPlaces().get(0);
         if (placeDao.getCountPlace(place.getNumber(), place.getParkingId().getParkingId()) > 0)
             throw new IllegalArgumentException();
         return placeDao.addPlace(place);
@@ -61,7 +61,7 @@ public class PlaceServiceImpl implements PlaceService {
     }
 
     public void updatePlace(PlaceDto placeDto) {
-        Place place = placeDto.getPlaceList().get(0);
+        Place place = placeDto.getPlaces().get(0);
         placeDao.updatePlace(place);
     }
 

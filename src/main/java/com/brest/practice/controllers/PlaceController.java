@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
  */
 
 @RestController
-@RequestMapping(value = "/place/")
+@RequestMapping(value = "/place")
 public class PlaceController {
 
     @Autowired

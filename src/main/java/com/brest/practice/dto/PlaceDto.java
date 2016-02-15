@@ -11,13 +11,13 @@ public class PlaceDto {
 
     private Integer total;
 
-    private List<Place> placeList;
+    private List<Place> places;
 
     public PlaceDto() {
     }
-    public PlaceDto(Integer total, List<Place> placeList) {
+    public PlaceDto(Integer total, List<Place> places) {
         this.total = total;
-        this.placeList = placeList;
+        this.places = places;
     }
 
     public Integer getTotal() {
@@ -27,10 +27,10 @@ public class PlaceDto {
         this.total = total;
     }
 
-    public List<Place> getPlaceList() {
-        return placeList;
+    public List<Place> getPlaces() {
+        return places;
     }
-    public void setPlaceList(List<Place> placeList) {
-        this.placeList = placeList;
+    public void setPlaceList(List<Place> places) {
+        this.places = places;
     }
 }
