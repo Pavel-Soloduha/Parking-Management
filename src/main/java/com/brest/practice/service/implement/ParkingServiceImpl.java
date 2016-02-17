@@ -48,8 +48,8 @@ public class ParkingServiceImpl implements ParkingService {
 
     public ParkingDto getParkingById(Integer parkingId) {
         List<Parking> parkings = new ArrayList<Parking>();
-        nullification(parkings);
         parkings.add(parkingDao.getParkingById(parkingId));
+        nullification(parkings);
         ParkingDto parkingDto = new ParkingDto(1, parkings);
         return parkingDto;
     }

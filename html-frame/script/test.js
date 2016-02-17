@@ -16,7 +16,7 @@ function fillParkingTable() {
         var info = data.parkings;
         var trHTML = '';
         $.each(info, function (i, item) {
-            trHTML += '<tr><td>' + item.parkingName + '</td>'
+            trHTML += '<tr><td><a href="/parking.html/?id=1">' + item.parkingName + '</a></td>'
             + '<td>' + (item.amountPlace - item.amountBusy) + '</td>'
             + '<td>' + item.amountBusy + '</td>'
             + '<td>' + item.amountFloor + '</td>'
@@ -26,8 +26,22 @@ function fillParkingTable() {
         });
         var table = $('#parkingtable').children();
         table.append(trHTML);
+//        foo();
+        fun();
     });
 };
+
+function getParameter(theParameter) {
+  var params = window.location.search.substr(1).split('&');
+
+  for (var i = 0; i < params.length; i++) {
+    var p=params[i].split('=');
+	if (p[0] == theParameter) {
+	  return decodeURIComponent(p[1]);
+	}
+  }
+  return false;
+}
 
 function createTariffTable() {
     $('#tarifftable').append('<table></table>');
@@ -111,11 +125,28 @@ function fillCarInfoTable() {
     });
 };
 
+//var foo = function() {
+//    $('tr td').click(function(){
+//        var column_num = parseInt( $(this).index() ) + 1;
+//        var row_num = parseInt( $(this).parent().index() )+1;
+//
+//        alert('Row Number: '+(row_num)+'\nColumn Number: '+(column_num));
+////        var row = $(this).find('td:last').text();
+////        alert('You clicked ' + row);
+//    });
+//};
 
+var fun = function() {
+    var table = $('#parkingtable').children();
+    alert(table.rows[1].cells[1]);
+};
 
 $(document).ready(function (){
    createParkingTable();
-   createTariffTable();
-   createPlaceTable();
-   createCarInfoTable();
+//   createTariffTable();
+//   createPlaceTable();
+//   createCarInfoTable();
+//    foo();
+//    fun();
+
 });
