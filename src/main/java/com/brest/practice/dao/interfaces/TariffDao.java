@@ -22,4 +22,6 @@ public interface TariffDao {
     void updateTariff(Tariff tariff);
 
     void deleteTariff(Integer tariffId);
+
+    List<Tariff> getTariffsByParkingId(Integer parkingId);
 }

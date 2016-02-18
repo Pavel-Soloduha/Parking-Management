@@ -124,24 +124,15 @@ function fillCarInfoTable() {
         table.append(trHTML);
     });
 };
-
-//var foo = function() {
-//    $('tr td').click(function(){
-//        var column_num = parseInt( $(this).index() ) + 1;
-//        var row_num = parseInt( $(this).parent().index() )+1;
-//
-//        alert('Row Number: '+(row_num)+'\nColumn Number: '+(column_num));
-////        var row = $(this).find('td:last').text();
-////        alert('You clicked ' + row);
-//    });
-//};
-
-var fun = function() {
-    var table = $('#parkingtable').children();
-    alert(table.rows[1].cells[1]);
+function createInput() {
+        var $butPark = $('<input type="button" onclick="location.href(\'http://www.google.com\');" value="Parkings"/>');
+        $butPark.appendTo($('#buttonParkings'));
+        var $butTar = $('<input type="button" onclick="location.href(\'http://www.google.com\');" value="Tariffs"/>');
+        $butTar.appendTo($('#buttonTariffs'));
 };
 
 $(document).ready(function (){
+   createInput();
    createParkingTable();
 //   createTariffTable();
 //   createPlaceTable();

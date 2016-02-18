@@ -49,4 +49,9 @@ public class TariffController {
     public void deleteTariff(@PathVariable(value = "id") Integer tariffId) {
         tariffService.deleteTariff(tariffId);
     }
+
+    @RequestMapping(value = "/parking/{id}", method = RequestMethod.GET)
+    public TariffDto getTariffsByParkingId(@PathVariable(value = "id") Integer parkingId) {
+        return tariffService.getTariffsByParkingId(parkingId);
+    }
 }

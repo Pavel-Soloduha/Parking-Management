@@ -2,7 +2,7 @@ function createParkingTable() {
     $('#parkingtable').append('<table></table>');
     var table = $('#parkingtable').children();
     table.append("<tr>"
-    + "<td><a href=Parking name</td>"
+    + "<td>Parking name</td>"
     + "<td>Amount free places</td>"
     + "<td>Amount busy places</td>"
     + "<td>Amount floors</td>"
@@ -13,7 +13,7 @@ function createParkingTable() {
     fillParkingTable();
 };
 function fillParkingTable() {
-    $.get("http://localhost:8080/parkingManagement/parking/", function(data, status){
+    $.get("http://localhost:8080/parkingManagement/parking/1", function(data, status){
         var info = data.parkings;
         var trHTML = '';
         $.each(info, function (i, item) {
@@ -31,8 +31,34 @@ function fillParkingTable() {
     });
 };
 
+function createTariffTable() {
+    $('#tarifftable').append('<table></table>');
+    var table = $('#tarifftable').children();
+    table.append("<tr>"
+    + "<td>Tariff name</td>"
+    + "<td>Cost per hour</td>"
+    + "<td>Description</td>"
+    + "</tr>");
+    fillTariffTable();
+};
+function fillTariffTable() {
+    $.get("http://localhost:8080/parkingManagement/parking/1", function(data, status){
+        var info = data.parkings;
+        $.each(info, function (i, tar) {
+            var trHTML = '';
+            $.each(tar.tariffs, function (i, item) {
+                trHTML += '<tr><td>' + item.tariffName + '</td>'
+                + '<td>' + item.costPerHour + '</td>'
+                + '<td>' + item.description + '</td>'
+                + '</tr>';
+            });
+            var table = $('#tarifftable').children();
+            table.append(trHTML);
+            });
+    });
+};
+
 $(document).ready(function (){
    createParkingTable();
-   var colToHide = $tbl.find("." + $(this).attr("name"));
-   $(colToHide).toggle();
+    createTariffTable();
 });

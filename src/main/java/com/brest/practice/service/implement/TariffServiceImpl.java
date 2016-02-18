@@ -72,4 +72,20 @@ public class TariffServiceImpl implements TariffService {
     public void deleteTariff(Integer tariffId) {
         tariffDao.deleteTariff(tariffId);
     }
+
+    public TariffDto getTariffsByParkingId(Integer parkingId) {
+        List<Tariff> tariffs = tariffDao.getAllTariffs();
+        for (int i = tariffs.size() - 1; i >= 0; i--) {
+            Tariff tariff = tariffs.get(i);
+            for(Object object : tariff.getParkings().toArray()) {
+                Parking parking = (Parking) object;
+                if(parking.getParkingId().equals(parkingId))
+                    continue;
+
+            }
+            tariffs.remove(tariff);
+        }
+        nullificationList(tariffs);
+        return new TariffDto(tariffs.size(), tariffs);
+    }
 }

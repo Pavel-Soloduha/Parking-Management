@@ -2,6 +2,7 @@ package com.brest.practice.dto;
 
 import com.brest.practice.models.Tariff;
 
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -18,6 +19,7 @@ public class TariffDto {
     }
     public TariffDto(Integer total, List<Tariff> tariffs) {
         this.total = total;
+//        this.tariffs = new Collection<>();
         this.tariffs = tariffs;
     }
 

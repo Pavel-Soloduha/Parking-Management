@@ -59,4 +59,11 @@ public class TariffDaoImpl implements TariffDao {
         tariff.setRemoved(true);
         sessionFactory.getCurrentSession().update(tariff);
     }
+
+    public List<Tariff> getTariffsByParkingId(Integer parkingId) {
+        Query query = sessionFactory.getCurrentSession()
+                .createQuery("Select a from Tariff a join a.parkings b where b.parkingId=:id and a.isRemoved=0")
+                .setParameter("id", parkingId);
+        return query.list();
+    }
 }

@@ -3,3 +3,5 @@ http://jsfiddle.net/neerajkumarsingh/tqyn3/
 http://www.technicaloverload.com/get-value-url-parameters-using-javascript/
 
 http://stackoverflow.com/questions/20834002/building-dynamic-url-using-a-href
+
+<input type="button" onclick="location.href='http://google.com';" value="Go to Google" />

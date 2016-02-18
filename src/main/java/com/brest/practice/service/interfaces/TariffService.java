@@ -23,4 +23,6 @@ public interface TariffService {
     void updateTariff(TariffDto tariffDto);
 
     void deleteTariff(Integer tariffId);
+
+    TariffDto getTariffsByParkingId(Integer parkingId);
 }
