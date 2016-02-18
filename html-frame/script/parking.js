@@ -47,7 +47,7 @@ function fillTariffTable() {
         $.each(info, function (i, tar) {
             var trHTML = '';
             $.each(tar.tariffs, function (i, item) {
-                trHTML += '<tr><td>' + item.tariffName + '</td>'
+                trHTML += '<tr><td><a href="/Parking-Management/html-frame/tariff.html/?id=1">' + item.tariffName + '</a></td>'
                 + '<td>' + item.costPerHour + '</td>'
                 + '<td>' + item.description + '</td>'
                 + '</tr>';
