@@ -20,12 +20,12 @@ public class ParkingController {
     private static String VERSION = "1.0";
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public @ResponseBody ParkingDto getAllParkings() {
+    public @ResponseBody List<ParkingDto> getAllParkings() {
         return parkingService.getAllParkings();
     }
 
     @RequestMapping(value = "/plus", method = RequestMethod.GET)
-    public @ResponseBody ParkingDto getAllParkingsPlus() {
+    public @ResponseBody List<ParkingDto> getAllParkingsPlus() {
         return parkingService.getAllParkingsPlus();
     }
 

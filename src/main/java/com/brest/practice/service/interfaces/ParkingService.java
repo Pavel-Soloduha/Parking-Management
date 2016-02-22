@@ -13,9 +13,9 @@ public interface ParkingService {
 
     ParkingDto getParkingById(Integer parkingId);
 
-    ParkingDto getAllParkings();
+    List<ParkingDto> getAllParkings();
 
-    ParkingDto getAllParkingsPlus();
+    List<ParkingDto> getAllParkingsPlus();
 
     void updateParking(ParkingDto parkingDto);
 

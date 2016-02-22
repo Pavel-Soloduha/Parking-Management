@@ -52,8 +52,6 @@ public class Parking {
     @Column(name = "removed")
     private Boolean isRemoved = false;
 
-    //todo
-//    @JsonIgnore
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     //fetch.type = lazy
     @JoinTable(name = "Parking_Tariff",
@@ -61,8 +59,6 @@ public class Parking {
         inverseJoinColumns = { @JoinColumn(name  = "tariffId") })
     private Set<Tariff> tariffs = new HashSet<Tariff>();
 
-    //todo
-//    @JsonIgnore
     @OneToMany(mappedBy = "parking", fetch = FetchType.LAZY)
     private Set<Place> places = new HashSet<Place>();
 
@@ -75,6 +71,16 @@ public class Parking {
         this.amountFloor = amountFloor;
         this.address = address;
         this.description = description;
+    }
+    public Parking(Integer parkingId, String parkingName, Integer amountBusy, Integer amountPlace, Integer amountFloor, String address, String description, Boolean isRemoved) {
+        this.parkingId = parkingId;
+        this.parkingName = parkingName;
+        this.amountBusy = amountBusy;
+        this.amountPlace = amountPlace;
+        this.amountFloor = amountFloor;
+        this.address = address;
+        this.description = description;
+        this.isRemoved = isRemoved;
     }
 
     public Integer getParkingId() {
