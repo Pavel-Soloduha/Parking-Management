@@ -9,35 +9,49 @@ function createTariffTable() {
     fillTariffTable();
 };
 function fillTariffTable() {
-    $.get("http://localhost:8080/parkingManagement/tariff/1", function(data, status){
-        var info = data.tariffs;
+    $.get("http://localhost:8080/parkingManagement/tariff/1", function(data, status) {
         var trHTML = '';
-        $.each(info, function (i, item) {
-            trHTML += '<tr><td>' + item.tariffName + '</td>'
-            + '<td>' + item.costPerHour + '</td>'
-            + '<td>' + item.description + '</td>'
-            + '</tr>';
-        });
+        trHTML += '<tr><td>' + data.tariffName + '</td>'
+        + '<td>' + data.costPerHour + '</td>'
+        + '<td>' + data.description + '</td>'
+        + '</tr>';
         var table = $('#tarifftable').children();
         table.append(trHTML);
     });
 };
 
-
-function createInput() {
-        var $butPark = $('<input type="button" onclick="location.href(\'http://www.google.com\');" value="Parkings"/>');
-        $butPark.appendTo($('#buttonParkings'));
-        var $butTar = $('<input type="button" onclick="location.href(\'http://www.google.com\');" value="Tariffs"/>');
-        $butTar.appendTo($('#buttonTariffs'));
+function createParkingTable() {
+    $('#parkingtable').append('<table></table>');
+    var table = $('#parkingtable').children();
+    table.append("<tr>"
+    + "<td>Parking name</td>"
+    + "<td>Amount free places</td>"
+    + "<td>Amount busy places</td>"
+    + "<td>Amount floors</td>"
+    + "<td>Parking address</td>"
+    + "<td>Description</td>"
+    + "<td style=\"display: none;\">parkingId</td>"
+    + "</tr>");
+    fillParkingTable();
+};
+function fillParkingTable() {
+     $.get("http://localhost:8080/parkingManagement/parking/", function(data, status){
+            var trHTML = '';
+            $.each(data, function (i, item) {
+                trHTML += '<tr><td><a href="/Parking-Management/html-frame/parking.html/?id=1">' + item.parkingName + '</a></td>'
+                + '<td>' + (item.amountPlace - item.amountBusy) + '</td>'
+                + '<td>' + item.amountBusy + '</td>'
+                + '<td>' + item.amountFloor + '</td>'
+                + '<td>' + item.address + '</td>'
+                + '<td>' + item.description + '</td>'
+                + '</tr>';
+            });
+            var table = $('#parkingtable').children();
+            table.append(trHTML);
+        });
 };
 
 $(document).ready(function (){
-   createInput();
-//   createParkingTable();
-   createTariffTable();
-//   createPlaceTable();
-//   createCarInfoTable();
-//    foo();
-//    fun();
-
+    createTariffTable();
+    createParkingTable();
 });

@@ -20,4 +20,6 @@ public interface ParkingService {
     void updateParking(ParkingDto parkingDto);
 
     void deleteParking(Integer parkingId);
+
+    List<ParkingDto> getParkingsByTariffId(Integer tariffId);
 }

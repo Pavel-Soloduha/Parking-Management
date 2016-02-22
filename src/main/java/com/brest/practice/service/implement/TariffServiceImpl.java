@@ -70,13 +70,15 @@ public class TariffServiceImpl implements TariffService {
         List<Tariff> tariffs = tariffDao.getAllTariffs();
         for (int i = tariffs.size() - 1; i >= 0; i--) {
             Tariff tariff = tariffs.get(i);
+            boolean check = false;
             for(Object object : tariff.getParkings().toArray()) {
                 Parking parking = (Parking) object;
                 if(parking.getParkingId().equals(parkingId))
-                    continue;
+                    check = true;
 
             }
-            tariffs.remove(tariff);
+            if(!check)
+                tariffs.remove(tariff);
         }
 
         List<TariffDto> tariffDtos = new ArrayList<TariffDto>();

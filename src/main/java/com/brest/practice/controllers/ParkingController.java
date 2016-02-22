@@ -50,6 +50,11 @@ public class ParkingController {
         parkingService.deleteParking(parkingId);
     }
 
+    @RequestMapping(value = "/tariff/{id}", method = RequestMethod.GET)
+    public List<ParkingDto> getParkingsByTariffId(@PathVariable(value = "id") Integer tariffId) {
+        return parkingService.getParkingsByTariffId(tariffId);
+    }
+
     @RequestMapping(value = "/version", method = RequestMethod.GET)
     public String getVersion() {
         return VERSION;

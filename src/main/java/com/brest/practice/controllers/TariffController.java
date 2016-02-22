@@ -53,7 +53,7 @@ public class TariffController {
     }
 
     @RequestMapping(value = "/parking/{id}", method = RequestMethod.GET)
-    public TariffDto getTariffsByParkingId(@PathVariable(value = "id") Integer parkingId) {
+    public List<TariffDto> getTariffsByParkingId(@PathVariable(value = "id") Integer parkingId) {
         return tariffService.getTariffsByParkingId(parkingId);
     }
 }

@@ -14,18 +14,15 @@ function createParkingTable() {
 };
 function fillParkingTable() {
     $.get("http://localhost:8080/parkingManagement/parking/1", function(data, status){
-        var info = data.parkings;
         var trHTML = '';
-        $.each(info, function (i, item) {
-            trHTML += '<tr><td>' + item.parkingName + '</td>'
-            + '<td>' + (item.amountPlace - item.amountBusy) + '</td>'
-            + '<td>' + item.amountBusy + '</td>'
-            + '<td>' + item.amountFloor + '</td>'
-            + '<td>' + item.address + '</td>'
-            + '<td>' + item.description + '</td>'
-            + '<td style="display: none;">' + item.parkingId + '</td>'
+            trHTML += '<tr><td>' + data.parkingName + '</td>'
+            + '<td>' + (data.amountPlace - data.amountBusy) + '</td>'
+            + '<td>' + data.amountBusy + '</td>'
+            + '<td>' + data.amountFloor + '</td>'
+            + '<td>' + data.address + '</td>'
+            + '<td>' + data.description + '</td>'
+            + '<td style="display: none;">' + data.parkingId + '</td>'
             + '</tr>';
-        });
         var table = $('#parkingtable').children();
         table.append(trHTML);
     });
@@ -42,19 +39,16 @@ function createTariffTable() {
     fillTariffTable();
 };
 function fillTariffTable() {
-    $.get("http://localhost:8080/parkingManagement/parking/1", function(data, status){
-        var info = data.parkings;
-        $.each(info, function (i, tar) {
-            var trHTML = '';
-            $.each(tar.tariffs, function (i, item) {
+    $.get("http://localhost:8080/parkingManagement/tariff/parking/1", function(data, status){
+        var trHTML = '';
+        $.each(data, function (i, item) {
                 trHTML += '<tr><td><a href="/Parking-Management/html-frame/tariff.html/?id=1">' + item.tariffName + '</a></td>'
                 + '<td>' + item.costPerHour + '</td>'
                 + '<td>' + item.description + '</td>'
                 + '</tr>';
             });
-            var table = $('#tarifftable').children();
-            table.append(trHTML);
-            });
+        var table = $('#tarifftable').children();
+        table.append(trHTML);
     });
 };
 
