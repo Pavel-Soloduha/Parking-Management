@@ -2,38 +2,65 @@ package com.brest.practice.dto;
 
 import com.brest.practice.models.Tariff;
 
-import java.util.Collection;
-import java.util.List;
-
 /**
  * Created by emergency on 2/12/16.
  */
 public class TariffDto {
 
-    private Integer total;
+    private Integer tariffId;
 
-    private List<Tariff> tariffs;
+    private String tariffName;
 
+    private Double costPerHour;
 
-    public TariffDto() {
-    }
-    public TariffDto(Integer total, List<Tariff> tariffs) {
-        this.total = total;
-//        this.tariffs = new Collection<>();
-        this.tariffs = tariffs;
-    }
+    private String description;
 
-    public Integer getTotal() {
-        return total;
-    }
-    public void setTotal(Integer total) {
-        this.total = total;
+    private Boolean isRemoved = false;
+
+    public TariffDto(Tariff tariff) {
+        this.tariffId = tariff.getTariffId();
+        this.tariffName = tariff.getTariffName();
+        this.costPerHour = tariff.getCostPerHour();
+        this.description = tariff.getDescription();
+        this.isRemoved = tariff.getRemoved();
     }
 
-    public List<Tariff> getTariffs() {
-        return tariffs;
+    public Integer getTariffId() {
+        return tariffId;
     }
-    public void setTariffs(List<Tariff> tariffs) {
-        this.tariffs = tariffs;
+    public void setTariffId(Integer tariffId) {
+        this.tariffId = tariffId;
+    }
+
+    public String getTariffName() {
+        return tariffName;
+    }
+    public void setTariffName(String tariffName) {
+        this.tariffName = tariffName;
+    }
+
+    public Double getCostPerHour() {
+        return costPerHour;
+    }
+    public void setCostPerHour(Double costPerHour) {
+        this.costPerHour = costPerHour;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Boolean getRemoved() {
+        return isRemoved;
+    }
+    public void setRemoved(Boolean removed) {
+        isRemoved = removed;
+    }
+
+    public Tariff createTariff() {
+        return new Tariff(tariffId, tariffName, costPerHour, description, isRemoved);
     }
 }

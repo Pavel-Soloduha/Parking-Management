@@ -41,8 +41,6 @@ public class Tariff {
     @Column(name = "removed")
     private Boolean isRemoved = false;
 
-    //todo
-//    @JsonIgnore
     @ManyToMany(mappedBy = "tariffs", fetch = FetchType.LAZY)
     private Set<Parking> parkings = new HashSet<Parking>();
 
@@ -52,6 +50,14 @@ public class Tariff {
         this.tariffName = tariffName;
         this.costPerHour = costPerHour;
         this.description = description;
+    }
+
+    public Tariff(Integer tariffId, String tariffName, Double costPerHour, String description, Boolean isRemoved) {
+        this.tariffId = tariffId;
+        this.tariffName = tariffName;
+        this.costPerHour = costPerHour;
+        this.description = description;
+        this.isRemoved = isRemoved;
     }
 
     public Integer getTariffId() {
@@ -119,7 +125,6 @@ public class Tariff {
         this.costPerHour = tariff.costPerHour;
         this.description = tariff.description;
         this.isRemoved = tariff.isRemoved;
-        //todo ?
         this.parkings = tariff.parkings;
     }
 }

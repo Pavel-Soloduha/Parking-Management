@@ -16,13 +16,13 @@ public interface TariffService {
 
     TariffDto getTariffById(Integer tariffId);
 
-    TariffDto getAllTariffs();
+    List<TariffDto> getAllTariffs();
 
-    TariffDto getAllTariffPlus();
+    List<TariffDto> getAllTariffPlus();
 
     void updateTariff(TariffDto tariffDto);
 
     void deleteTariff(Integer tariffId);
 
-    TariffDto getTariffsByParkingId(Integer parkingId);
+    List<TariffDto> getTariffsByParkingId(Integer parkingId);
 }

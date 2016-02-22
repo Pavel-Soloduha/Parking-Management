@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * Created by emergency on 2/9/16.
  */
@@ -26,12 +28,12 @@ public class TariffController {
     }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public TariffDto getAllTariffs() {
+    public List<TariffDto> getAllTariffs() {
         return tariffService.getAllTariffs();
     }
 
     @RequestMapping(value = "/plus", method = RequestMethod.GET)
-    public TariffDto getAllTariffsPlus() {
+    public List<TariffDto> getAllTariffsPlus() {
         return tariffService.getAllTariffPlus();
     }
 

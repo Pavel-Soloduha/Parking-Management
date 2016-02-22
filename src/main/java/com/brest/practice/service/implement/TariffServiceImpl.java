@@ -23,19 +23,9 @@ public class TariffServiceImpl implements TariffService {
     @Autowired
     private TariffDao tariffDao;
 
-    static void nullificationList(List<Tariff> tariffs) {
-        for(Tariff tariff : tariffs) {
-            for (Parking parking : tariff.getParkings()) {
-                parking.setTariffs(null);
-                parking.setPlaces(null);
-            }
-        }
-    }
-
     public Integer addTariff(TariffDto tariffDto) {
-        Tariff tariff = tariffDto.getTariffs().get(0);
+        Tariff tariff = tariffDto.createTariff();
         if (tariffDao.getCountTariffByName(tariff.getTariffName()) > 0)
-            //todo add exception
             throw new IllegalArgumentException();
 
         return tariffDao.addTariff(tariff);
@@ -46,34 +36,37 @@ public class TariffServiceImpl implements TariffService {
     }
 
     public TariffDto getTariffById(Integer tariffId) {
-        List<Tariff> tariffs = new ArrayList<Tariff>();
-        tariffs.add(tariffDao.getTariffById(tariffId));
-        nullificationList(tariffs);
-        TariffDto tariffDto = new TariffDto(tariffs.size(), tariffs);
+        TariffDto tariffDto = new TariffDto(tariffDao.getTariffById(tariffId));
         return tariffDto;
     }
 
-    public TariffDto getAllTariffs() {
+    public List<TariffDto> getAllTariffs() {
         List<Tariff> tariffs = tariffDao.getAllTariffs();
-        nullificationList(tariffs);
-        return new TariffDto(tariffs.size(), tariffs);
+        List<TariffDto> tariffDtos = new ArrayList<TariffDto>();
+        for(Tariff tariff : tariffs) {
+            tariffDtos.add(new TariffDto(tariff));
+        }
+        return tariffDtos;
     }
 
-    public TariffDto getAllTariffPlus() {
+    public List<TariffDto> getAllTariffPlus() {
         List<Tariff> tariffs = tariffDao.getAllTariffsPlus();
-        nullificationList(tariffs);
-        return new TariffDto(tariffs.size(), tariffs);
+        List<TariffDto> tariffDtos = new ArrayList<TariffDto>();
+        for(Tariff tariff : tariffs) {
+            tariffDtos.add(new TariffDto(tariff));
+        }
+        return tariffDtos;
     }
 
     public void updateTariff(TariffDto tariffDto) {
-        tariffDao.updateTariff(tariffDto.getTariffs().get(0));
+        tariffDao.updateTariff(tariffDto.createTariff());
     }
 
     public void deleteTariff(Integer tariffId) {
         tariffDao.deleteTariff(tariffId);
     }
 
-    public TariffDto getTariffsByParkingId(Integer parkingId) {
+    public List<TariffDto> getTariffsByParkingId(Integer parkingId) {
         List<Tariff> tariffs = tariffDao.getAllTariffs();
         for (int i = tariffs.size() - 1; i >= 0; i--) {
             Tariff tariff = tariffs.get(i);
@@ -85,7 +78,11 @@ public class TariffServiceImpl implements TariffService {
             }
             tariffs.remove(tariff);
         }
-        nullificationList(tariffs);
-        return new TariffDto(tariffs.size(), tariffs);
+
+        List<TariffDto> tariffDtos = new ArrayList<TariffDto>();
+        for(Tariff tariff : tariffs) {
+            tariffDtos.add(new TariffDto(tariff));
+        }
+        return tariffDtos;
     }
 }
