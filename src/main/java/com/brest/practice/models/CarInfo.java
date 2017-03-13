@@ -1,7 +1,6 @@
 package com.brest.practice.models;
 
 import org.hibernate.annotations.*;
-import org.hibernate.jpa.criteria.predicate.BooleanAssertionPredicate;
 
 import javax.persistence.*;
 import javax.persistence.Entity;
