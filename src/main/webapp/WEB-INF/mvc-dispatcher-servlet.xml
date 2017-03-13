@@ -20,11 +20,10 @@
 
     <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource"
           destroy-method="close">
-        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <property name="url"
-                  value="jdbc:mysql://localhost:3306/mydb" />
-        <property name="username" value="root" />
-        <property name="password" value="" />
+        <property name="driverClassName" value="org.postgresql.Driver" />
+        <property name="url" value="jdbc:postgresql://localhost:5432/test-db" />
+        <property name="username" value="postgres" />
+        <property name="password" value="admin" />
     </bean>
 
     <bean id="hibernate4AnnotatedSessionFactory"
@@ -40,9 +39,9 @@
         </property>
         <property name="hibernateProperties">
             <props>
-                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQL9Dialect</prop>
                 <prop key="hibernate.show_sql">true</prop>
-                <prop key="hibernate.hbm2ddl.auto">update</prop>
+                <prop key="hibernate.hbm2ddl.auto">create</prop>
             </props>
         </property>
     </bean>
@@ -51,6 +50,19 @@
 
     <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
         <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+    </bean>
+
+    <bean id="jsonConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+        <property name="supportedMediaTypes" value="application/json" />
+        <property name="prettyPrint" value="true" />
+    </bean>
+
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <ref bean="jsonConverter"/>
+            </list>
+        </property>
     </bean>
 
 </beans>
